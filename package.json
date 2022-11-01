@@ -25,7 +25,7 @@
     "server": "nodemon api/server,js",
     "client": "react-scripts start",
     "build": "react-scripts build",
-    "postinstall": "create DB comoEnCasa"
+    "postinstall": "createdb comoEnCasa"
   },
   "proxy": "http://localhost:3001",
   "eslintConfig": {
