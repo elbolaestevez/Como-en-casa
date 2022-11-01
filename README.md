@@ -1,4 +1,4 @@
-# COMO-ENCASA
+# COMO-EN-CASA
 ### Objetivos
 
 ### Tecnologías y Herramientas
