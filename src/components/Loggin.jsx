@@ -1,13 +1,13 @@
-import React from 'react'
-import {AiOutlineUserAdd} from "react-icons/ai"
-
-
+import React from "react";
+import { AiOutlineUserAdd } from "react-icons/ai";
 
 function Loggin() {
   return (
     <div className="loggin-container">
-    <form className='loggin'>
-    <p className="imagen"><AiOutlineUserAdd /></p>
+      <form className="loggin">
+        <p className="imagen">
+          <AiOutlineUserAdd />
+        </p>
         <label>Nombre </label>
         <input type="text" required />
         <label>Email </label>
@@ -21,9 +21,9 @@ function Loggin() {
         <label>Direccion </label>
         <input type="text" required />
         <button>Enviar</button>
-    </form>
-  </div>
-  )
+      </form>
+    </div>
+  );
 }
 
-export default Loggin
+export default Loggin;

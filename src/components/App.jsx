@@ -1,10 +1,5 @@
-import Loggin from "./Loggin";
-import Registro from "./Registro";
-
 function App() {
-  return (
-    <div> <Loggin/></div>
-  );
+  return <div></div>;
 }
 
 export default App;
