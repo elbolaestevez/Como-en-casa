@@ -15,7 +15,7 @@ Users.init(
       allowNull: false,
     },
     telefono: {
-      type: Sequelize.INTEGER,
+      type: Sequelize.STRING,
     },
     contraseña: {
       type: Sequelize.STRING,

@@ -1,5 +1,12 @@
 {
-  "id": 1,
+
+  "nombre": "Pepe",
+  "direccion": "San Martin 123",
+  "telefono": "3513959595",
+  "contraseña": "1234",
+  "email": "pepe@pepe.com"
+},
+ { "id": 1,
   "nombre": "milanesa napolitana",
   "descripcion": "la mejor milanga",
   "precio": 1200,
@@ -7,4 +14,5 @@
   "tipo": "Carnes",
   "puntaje": 5,
   "stock": 100
+
 }
