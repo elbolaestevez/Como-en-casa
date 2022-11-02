@@ -1,10 +1,9 @@
-import './App.css';
+import Loggin from "./Loggin";
+import Registro from "./Registro";
 
 function App() {
   return (
-    <div>
-      <h1>Hola Mundo!!</h1>
-    </div>
+    <div> <Loggin/></div>
   );
 }
 
