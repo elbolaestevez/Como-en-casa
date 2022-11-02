@@ -1,9 +1,11 @@
-
+import React from "react";
+import NavbarProductos from "./NavbarProductos";
+// import GrillaDeProductos from "../common/GrillaDeProductos";
 
 function App() {
   return (
     <div>
-      <h1>Hola Mundo!</h1>
+      <NavbarProductos />
     </div>
   );
 }
