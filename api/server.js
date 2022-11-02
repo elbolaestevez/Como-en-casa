@@ -4,12 +4,12 @@ const express = require("express");
 const app = express();
 const db = require("./config/db");
 const models = require("./models");
-//const routers = require("./routes");
+const routers = require("./routers");
 const cors = require("cors");
 
 app.use(express.json());
 
-//app.use("/api", routers);
+app.use("/api", routers);
 
 app.use(cors());
 
