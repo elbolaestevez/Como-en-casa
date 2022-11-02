@@ -1,0 +1,32 @@
+.container-navProductos {
+  width: 100vw;
+  height: 10vh;
+  background-color: $page_background;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  top: 0;
+  position: sticky;
+  z-index: 1;
+}
+
+.items-navProductos {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.items-navProductos a {
+  text-decoration: none;
+  margin: auto 10px;
+  color: $navbar_letter;
+  font-size: 1.2em;
+}
+
+.items-navProductos a:hover {
+  color: $navbar_a_hover;
+}
+
+.items-navProductos li {
+  list-style: none;
+}

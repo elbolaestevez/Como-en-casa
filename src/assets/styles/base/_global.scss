@@ -1,10 +1,11 @@
 //global
-$page_background:rgb(0, 17, 255);
+$navabar_background_submenu: rgb(255, 255, 255);
+$navabar_letter_submenu: rgb(0, 153, 233);
+
+$page_background: #f5f5f5;
 $letter: rgb(255, 255, 255);
 
-//Navbar
-$navbar_background: rgb(128, 128, 128);
-$navbar_letter: rgb(0, 0, 0);
-$navbar_a_hover: rgb(255, 255, 255);
-$navabar_background_submenu: rgb(255, 255, 255);
-$navabar_letter_submenu: rgb(0, 153, 233)
+//navbar productos
+$navbar_background: #c7d1d0;
+$navbar_letter: black;
+$navbar_a_hover: #ed6a5a;
