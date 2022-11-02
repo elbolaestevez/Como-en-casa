@@ -28,6 +28,19 @@ Cartas.init(
       type: Sequelize.FLOAT,
       defaultValue: 0,
     },
+    comentarios: {
+      type: Sequelize.ARRAY(Sequelize.STRING),
+      defaultValue: [],
+      set: function (comentarios1) {
+        if (typeof comentarios1 === "string") {
+          console.log("que onda", comentarios1);
+          console.log("array123", this);
+          this.comentarios.push(comentarios1);
+        }
+
+        // this.setDataValue("comentarios", comentarios);
+      },
+    },
     stock: {
       type: Sequelize.INTEGER,
       defaultValue: 50,
