@@ -19,7 +19,7 @@ Cartas.init(
     },
     imagen: {
       type: Sequelize.STRING,
-      allowNull: false,
+      // allowNull: false,
     },
     tipo: {
       type: Sequelize.STRING,
@@ -27,6 +27,10 @@ Cartas.init(
     puntaje: {
       type: Sequelize.FLOAT,
       defaultValue: 0,
+    },
+    stock: {
+      type: Sequelize.INTEGER,
+      defaultValue: 50,
     },
   },
   { sequelize: db, modelName: "cartas" }
