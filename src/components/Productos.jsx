@@ -25,10 +25,10 @@ function Productos() {
             <a href="#bebidas">Bebidas</a>
           </li>
           <li>
-            <a href="#postres">postres</a>
+            <a href="#postres">Postres</a>
           </li>
           <li>
-            <a href="#veganos">Platos veganos</a>
+            <a href="#veganos">Platos Veganos</a>
           </li>
         </ul>
       </div>

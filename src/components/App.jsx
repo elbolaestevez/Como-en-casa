@@ -4,6 +4,7 @@ import Registro from "./Registro";
 import Navbar from "./Navbar";
 import Inicio from "./Inicio";
 import Productos from "./Productos";
+import Footer from "./Footer";
 import { Route, Routes } from "react-router";
 
 function App() {
@@ -16,6 +17,7 @@ function App() {
         <Route path="registro" element={<Registro />}></Route>
         <Route path="productos" element={<Productos />}></Route>
       </Routes>
+      <Footer/>
     </div>
   );
 }
