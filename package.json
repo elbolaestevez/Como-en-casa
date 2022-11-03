@@ -25,8 +25,7 @@
     "start": "concurrently 'npm run client' 'npm run server'",
     "server": "nodemon api/server.js",
     "client": "react-scripts start",
-    "build": "react-scripts build",
-    "postinstall": "createdb comoEnCasa"
+    "build": "react-scripts build"
   },
   "proxy": "http://localhost:3001",
   "eslintConfig": {

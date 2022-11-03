@@ -14,6 +14,7 @@ Cartas.belongsToMany(Pedido, { through: "comida" });
 
 Users.hasMany(Pago);
 Pago.belongsTo(Users);
+
 // Admins.belongsTo(Users,{as:"adminUser"})
 
 module.exports = { Cartas, Users, Pedido, Admins, Pago };
