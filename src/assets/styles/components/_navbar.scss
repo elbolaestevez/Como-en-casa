@@ -1,8 +1,6 @@
 .navbar_container {
-  width: 100vw;
   height: 70px;
-  background-color: $navbar_background;
-  padding: 0px 20px;
+  background-color: $navbar_background_main;
 }
 
 .navbar {
@@ -16,6 +14,12 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
+  img {
+    width: 100px;
+  }
+  svg{
+    font-size: 3em;
+  }
   & > ul {
     height: 100%;
     display: flex;
@@ -31,11 +35,13 @@
     height: 100%;
     display: flex;
     align-items: center;
-    padding: 14px;
+    padding: 0px 20px;
     font-weight: bold;
+    color: $navbar_letter_main;
+    text-decoration: none;
   }
   & > ul > li > a:hover{
-    color: $navbar_a_hover;
+    color: $navbar_a_hover_main;
   }
   & ul li ul {
     font-size: 1rem;
@@ -60,14 +66,15 @@
     top: 70px;
   }
   & ul li ul li a{
+    text-decoration: none;
+    text-align: center;
     display: block;
     color: $navabar_letter_submenu;
     padding: 6px;
     margin-top: 5px;
     font-weight: bold;
   }
-}
-
-.navbar_logo {
-  font-size: 1.8em;
+  & ul li ul li a:hover{
+    color: $navbar_letter_main;
+  }
 }

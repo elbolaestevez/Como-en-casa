@@ -1,21 +1,23 @@
 import React from "react";
 import { FaUserCircle } from "react-icons/fa";
+import { Link } from "react-router-dom";
+import logo from "../assets/image/Logo-sin-fondo.png"
 
 function Navbar() {
   return (
     <div className="navbar_container">
       <div className="navbar">
         <div className="navbar_menu">
-          <h2>El Buen Comer</h2>
+          <img src={logo} alt="logo" srcset="" />
           <ul>
-            <li><a>Home</a></li>
-            <li><a>Productos</a></li>
+            <li><Link to="/">Inicio</Link></li>
+            <li><Link to="productos">Productos</Link></li>
             <li><a>Nosotros</a></li>
             <li><a>Contacto</a></li>
-            <li className="navbar_logo"><a><FaUserCircle /></a>
+            <li><a><FaUserCircle /></a>
               <ul>
-              <li><a>Login</a></li>
-              <li><a>Registrarse</a></li>
+              <li><Link to="login">Login</Link></li>
+              <li><Link to="registro">Registrarse</Link></li>
             </ul>
             </li>
           </ul>

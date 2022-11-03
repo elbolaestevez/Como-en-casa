@@ -1,7 +1,7 @@
 import React from "react";
 import GrillaDeProductos from "../common/GrillaDeProductos";
 
-function NavbarProductos() {
+function Productos() {
   return (
     <div>
       <div className="container-navProductos">
@@ -55,4 +55,4 @@ function NavbarProductos() {
   );
 }
 
-export default NavbarProductos;
+export default Productos;

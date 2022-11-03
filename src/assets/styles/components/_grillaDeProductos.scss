@@ -1,12 +1,5 @@
-html {
-  scroll-padding: 10vh;
-  scroll-behavior: smooth;
-}
-
 .container-productos {
   margin-top: 5vh;
-  width: 100vw;
-  //   background-color: red;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -19,7 +12,6 @@ html {
 
 .card-productos {
   width: 100%;
-  //   background-color: yellow;
   display: flex;
   justify-content: center;
   align-items: center;
