@@ -1,7 +1,13 @@
+import { Routes } from "react-router";
 import Navbar from "./Navbar";
 
 function App() {
-  return <div></div>;
+  return (
+    <div>
+      <Navbar />
+      <Routes></Routes>
+    </div>
+  );
 }
 
 export default App;

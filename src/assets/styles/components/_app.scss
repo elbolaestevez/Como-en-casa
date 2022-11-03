@@ -9,3 +9,8 @@ body {
   -moz-osx-font-smoothing: grayscale;
   background-color: $page_background;
 }
+
+html {
+  scroll-padding: 10vh;
+  scroll-behavior: smooth;
+}
