@@ -6,8 +6,10 @@ const db = require("./config/db");
 const models = require("./models");
 const routers = require("./routers");
 const cors = require("cors");
+const cookieParser = require("cookie-parser");
 
 app.use(express.json());
+app.use(cookieParser());
 
 app.use("/api", routers);
 
