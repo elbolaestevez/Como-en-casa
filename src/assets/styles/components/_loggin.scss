@@ -18,16 +18,16 @@
     padding: 13px;
     font-size: 15px;
   }
+  input:hover {
+    background: #5f929e;
+  }
   button {
     margin-top: 15px;
     width: 30%;
   }
-}
-svg {
-  width: 100px;
-  height: 100px;
+  svg {
+    width: 100px;
+    height: 100px;
+  }
 }
 
-input:hover {
-  background: #5f929e;
-}
