@@ -1,0 +1,32 @@
+.registro-container {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.registro {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  width: 20%;
+  label {
+    margin: 10px 0px;
+  }
+  input {
+    background-color: #849cbf;
+    border: 1px solid #b1b6bd;
+    padding: 13px;
+    font-size: 15px;
+  }
+  input:hover {
+    background: #5f929e;
+  }
+  button {
+    margin-top: 15px;
+    width: 30%;
+  }
+  svg {
+    width: 100px;
+    height: 100px;
+  }
+}

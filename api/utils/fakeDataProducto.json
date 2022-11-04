@@ -1,0 +1,65 @@
+[
+  {
+    "nombre": "milanesa napolitana",
+    "descripcion": "la mejor milanga",
+    "precio": 1200,
+    "imagen": "https://upload.wikimedia.org/wikipedia/commons/4/47/Hamburger_%28black_bg%29.jpg",
+    "tipo": "Carnes",
+    "puntaje": 5,
+    "stock": 100
+  },
+  {
+    "nombre": "Carne al horno",
+    "descripcion": "asdasdasdasdsadadasdasdasdsadsad",
+    "precio": 1200,
+    "imagen": "https://upload.wikimedia.org/wikipedia/commons/4/47/Hamburger_%28black_bg%29.jpg",
+    "tipo": "Carnes",
+    "puntaje": 5,
+    "stock": 100
+  },
+  {
+    "nombre": "Spaguetti con bolognesa",
+    "descripcion": "asdasdasdasdsadadasdasdasdsadsad",
+    "precio": 1200,
+    "imagen": "https://upload.wikimedia.org/wikipedia/commons/4/47/Hamburger_%28black_bg%29.jpg",
+    "tipo": "Pastas",
+    "puntaje": 5,
+    "stock": 100
+  },
+  {
+    "nombre": "Spaguetti con crema",
+    "descripcion": "asdasdasdasdsadadasdasdasdsadsad",
+    "precio": 1200,
+    "imagen": "https://upload.wikimedia.org/wikipedia/commons/4/47/Hamburger_%28black_bg%29.jpg",
+    "tipo": "Pastas",
+    "puntaje": 5,
+    "stock": 100
+  },
+  {
+    "nombre": "Ravioles de ricota",
+    "descripcion": "asdasdasdasdsadadasdasdasdsadsad",
+    "precio": 1200,
+    "imagen": "https://upload.wikimedia.org/wikipedia/commons/4/47/Hamburger_%28black_bg%29.jpg",
+    "tipo": "Pastas",
+    "puntaje": 5,
+    "stock": 100
+  },
+  {
+    "nombre": "Trucha",
+    "descripcion": "asdasdasdasdsadadasdasdasdsadsad",
+    "precio": 1200,
+    "imagen": "https://upload.wikimedia.org/wikipedia/commons/4/47/Hamburger_%28black_bg%29.jpg",
+    "tipo": "Pescado",
+    "puntaje": 5,
+    "stock": 100
+  },
+  {
+    "nombre": "Atun con arroz",
+    "descripcion": "asdasdasdasdsadadasdasdasdsadsad",
+    "precio": 1200,
+    "imagen": "https://upload.wikimedia.org/wikipedia/commons/4/47/Hamburger_%28black_bg%29.jpg",
+    "tipo": "Pescado",
+    "puntaje": 5,
+    "stock": 100
+  }
+]
