@@ -1,0 +1,71 @@
+.productoDetallado {
+  background-image: url("../../image/madera.jpg");
+  background-size: 100%;
+  width: 100%;
+  height: 85vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  //   background-color: red;
+}
+
+.card-productoDetallado {
+  width: 70%;
+  height: 70vh;
+  background-color: rgba(255, 255, 255, 0.289);
+  display: flex;
+  border-radius: 20px;
+  backdrop-filter: blur(7px);
+}
+
+.img-productoDetallado {
+  width: 50%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  border-radius: 10px;
+  padding: 50px;
+}
+.container-img {
+  width: 100%;
+  height: 60%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 10px;
+}
+
+.container-img img {
+  width: 100%;
+  border-radius: 10px;
+}
+
+.descripcion-productoDetallado {
+  margin-left: 5%;
+  width: 50%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.descripcion-productoDetallado h4 {
+  font-size: 2.5em;
+  margin-bottom: 2vh;
+}
+.descripcion-productoDetallado p {
+  font-size: 1.5em;
+  margin-bottom: 2vh;
+}
+
+.descripcion-productoDetallado button {
+  margin-top: 10vh;
+  width: 150px;
+  height: 3vh;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}

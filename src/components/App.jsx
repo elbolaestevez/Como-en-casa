@@ -5,6 +5,7 @@ import Inicio from "./Inicio";
 import Productos from "./Productos";
 import Footer from "./Footer";
 import { Route, Routes } from "react-router";
+import ProductoDetallado from "../common/ProductoDetallado";
 import { useEffect } from "react";
 import { useDispatch } from "react-redux";
 import axios from "axios";
@@ -28,8 +29,13 @@ function App() {
         <Route path="login" element={<Login />}></Route>
         <Route path="registro" element={<Registro />}></Route>
         <Route path="productos" element={<Productos />}></Route>
+        <Route path="/productos/:id" element={<ProductoDetallado />}></Route>
+        {/* <Route
+          path="/productos"
+          element={<GrillaDeProductos productos={products} />}
+        ></Route> */}
       </Routes>
-      <Footer/>
+      <Footer />
     </div>
   );
 }
