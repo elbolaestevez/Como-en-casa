@@ -1,7 +1,22 @@
 import React from "react";
-import GrillaDeProductos from "../common/GrillaDeProductos";
+import { useEffect, useState } from "react";
+import axios from "axios";
+import Card from "../common/Card";
 
 function Productos() {
+  const [products, setProducts] = useState([]);
+
+  //Pedido para obtener todos los productos
+  useEffect(() => {
+    axios
+      .get("http://localhost:3000/api/cartas")
+      .then((res) => res.data)
+      .then((cartas) => setProducts(cartas))
+      .catch((error) => console.error(error));
+  }, []);
+
+  // console.log(products);
+
   return (
     <div>
       <div className="container-navProductos">
@@ -33,23 +48,51 @@ function Productos() {
         </ul>
       </div>
 
+      {/* <Card productos={products} /> */}
+
       <div className="container-productos">
         <h2 id="carnes">Carnes</h2>
-        <GrillaDeProductos />
+        {/* <Card productos={products} /> */}
+        <Card
+          productos={products.filter((producto) => producto.tipo === "Carnes")}
+        />
+
         <h2 id="pastas">Pastas</h2>
-        <GrillaDeProductos />
+        <Card
+          productos={products.filter((producto) => producto.tipo === "Pastas")}
+        />
+
         <h2 id="pollo">Pollo</h2>
-        <GrillaDeProductos />
+        <Card
+          productos={products.filter((producto) => producto.tipo === "Pollo")}
+        />
+
         <h2 id="ensaladas">Ensaladas</h2>
-        <GrillaDeProductos />
+        <Card
+          productos={products.filter(
+            (producto) => producto.tipo === "Ensaladas"
+          )}
+        />
+
         <h2 id="pescados">Pescados</h2>
-        <GrillaDeProductos />
+        <Card
+          productos={products.filter((producto) => producto.tipo === "Pescado")}
+        />
+
         <h2 id="bebidas">Bebidas</h2>
-        <GrillaDeProductos />
+        <Card
+          productos={products.filter((producto) => producto.tipo === "Bebidas")}
+        />
+
         <h2 id="postres">Postres</h2>
-        <GrillaDeProductos />
+        <Card
+          productos={products.filter((producto) => producto.tipo === "Postres")}
+        />
+
         <h2 id="veganos">Platos Veganos</h2>
-        <GrillaDeProductos />
+        <Card
+          productos={products.filter((producto) => producto.tipo === "Veganos")}
+        />
       </div>
     </div>
   );
