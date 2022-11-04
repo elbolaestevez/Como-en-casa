@@ -19,9 +19,9 @@ router.get("/", (req, res) => {
     .catch((err) => res.status(400).send(err));
 });
 
-router.get("/:name", (req, res) => {
+router.get("/:id", (req, res) => {
   Cartas.findOne({
-    where: { nombre: req.params.name },
+    where: { id: req.params.id },
   })
     .then((producto) => res.status(200).send(producto))
     .catch((err) => res.status(400).send(err));
