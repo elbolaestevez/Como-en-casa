@@ -7,7 +7,7 @@ const validateUser = require("../middleware/auth");
 
 router.post("/register", (req, res) => {
   Users.create(req.body)
-    .then((usuario) => res.send(usuario))
+    .then((usuario) => res.status(201).send(usuario))
     .catch((error) => console.log(error));
 });
 
