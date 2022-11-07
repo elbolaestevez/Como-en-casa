@@ -14,7 +14,7 @@ router.post("/", async (req, res) => {
     const carta = await Cartas.findOne({
       where: { id: idcarta },
     });
-    console.log(detalle);
+    console.log("hola", carta);
     const carrito = await Carrito.create({ detalle: detalle });
 
     await carrito.setAuthor(usuario);
@@ -46,6 +46,7 @@ router.get("/:email", async (req, res) => {
       },
       include: [{ model: Users, as: "author" }, "cartas"],
     });
+
     res.send(usuariocarrito);
   } catch (error) {
     console.log(error);

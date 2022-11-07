@@ -1,3 +1,4 @@
+const { INTEGER } = require("sequelize");
 const Sequelize = require("sequelize");
 const db = require("../config/db");
 //const bcrypt = require("bcrypt");
@@ -9,9 +10,8 @@ Pedido.init(
     detalle: {
       type: Sequelize.STRING,
     },
-    comprado: {
-      type: Sequelize.STRING,
-      defaultValue: "",
+    idcomprado: {
+      type: Sequelize.ARRAY(INTEGER),
     },
   },
   { sequelize: db, modelName: "pedido" }

@@ -1,25 +1,52 @@
 const express = require("express");
 const router = express.Router();
-const { Pedido, Users, Cartas } = require("../models");
+const { Pedido, Users, Cartas, Carrito } = require("../models");
 
 // me crea un producto en el pedido
 router.post("/", async (req, res) => {
-  try {
-    const { email, idcarta, detalle } = req.body;
+  const { email, detalle } = req.body;
 
-    const usuario = await Users.findOne({
+  try {
+    const user = await Users.findOne({
       where: { email },
     });
 
-    const carta = await Cartas.findOne({
-      where: { id: idcarta },
+    const usuariocarrito = await Carrito.findAll({
+      where: {
+        authorId: user.id,
+      },
+      include: [{ model: Users, as: "author" }, "cartas"],
     });
-    console.log(detalle);
-    const pedido = await Pedido.create({ detalle: detalle });
+    for (let i = 0; i < usuariocarrito.length; i++) {
+      const pedido = await Pedido.create({
+        detalle: detalle,
+      });
 
-    await pedido.setOrdenfinalizada(usuario);
-    await pedido.addCartas(carta);
-    res.send(pedido);
+      await pedido.setOrdenfinalizada(user);
+      await pedido.addCartas(usuariocarrito[i].dataValues.cartas[0]);
+    }
+
+    //solucion1
+    ////////////////////////
+    // let pedidos = [];
+    // for (let i = 0; i < usuariocarrito.length; i++) {
+    //   pedidos.push(usuariocarrito[i].dataValues.cartas[0].dataValues.id);
+    //   console.log("que pasa", usuariocarrito);
+    // }
+    // console.log("pedidos", pedidos);
+    // const pedido = await Pedido.create({
+    //   detalle: detalle,
+    //   idcomprado: pedidos,
+    // });
+
+    /////////////////////////
+    const carritoborrado = await Carrito.destroy({
+      where: {
+        authorId: user.id,
+      },
+      include: [{ model: Users, as: "author" }, "cartas"],
+    });
+    res.send("se compro");
   } catch (error) {
     console.log(error);
   }
