@@ -4,6 +4,17 @@ const db = require("../config/db");
 
 class Pedido extends Sequelize.Model {}
 
-Pedido.init({}, { sequelize: db, modelName: "pedido" });
+Pedido.init(
+  {
+    detalle: {
+      type: Sequelize.STRING,
+    },
+    comprado: {
+      type: Sequelize.STRING,
+      defaultValue: "",
+    },
+  },
+  { sequelize: db, modelName: "pedido" }
+);
 
 module.exports = Pedido;

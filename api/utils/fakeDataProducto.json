@@ -1,101 +1,74 @@
 [
   {
-    "nombre": "Hamburguesa simple",
-    "descripcion": "Hamburguesa simple de un medallon de carne de 90gms, con lechuga y tomate",
+    "nombre": "milanesa napolitana",
+    "descripcion": "la mejor milanga",
     "precio": 1200,
     "imagen": "https://upload.wikimedia.org/wikipedia/commons/4/47/Hamburger_%28black_bg%29.jpg",
     "tipo": "Carnes",
     "puntaje": 5,
-    "stock": 80
-  },
-  {
-    "nombre": "Milanesa napolitana",
-    "descripcion": "milanesa napolitana con jamon, mozzarella y queso parmesano",
-    "precio": 1450,
-    "imagen": "https://lacocinademasito.com/wp-content/uploads/2019/12/Milanesa-de-ternera-argentina.jpg",
-    "tipo": "Carnes",
-    "puntaje": 5,
-    "stock": 94
+    "stock": 100
   },
   {
     "nombre": "Carne al horno",
-    "descripcion": "Carne al Horno con papas rusticas",
-    "precio": 1100,
-    "imagen": "https://www.gourmet.cl/wp-content/uploads/2016/09/car10-570x458.jpg",
+    "descripcion": "asdasdasdasdsadadasdasdasdsadsad",
+    "precio": 1200,
+    "imagen": "https://upload.wikimedia.org/wikipedia/commons/4/47/Hamburger_%28black_bg%29.jpg",
     "tipo": "Carnes",
-    "puntaje": 4,
-    "stock": 100
-  },
-  {
-    "nombre": "Spaguetti con salsa blanca",
-    "descripcion": "Spaguetti con salsa blanca, albahaca y queso",
-    "precio": 1200,
-    "imagen": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR0je68Ry35UCLaEKPDNOcP8Cq9Y6nuq7Jf_aU6Suhzzh_EDqyNp-YxlbtWaL3UEorOQYk&usqp=CAU",
-    "tipo": "Pastas",
-    "puntaje": 5,
-    "stock": 100
-  },
-  {
-    "nombre": "Tallarines con pesto",
-    "descripcion": "Tallarines al peso con queso parmesano",
-    "precio": 1200,
-    "imagen": "https://t1.rg.ltmcdn.com/es/posts/4/5/3/tallarines_al_pesto_73354_600_square.jpg",
-    "tipo": "Pastas",
     "puntaje": 5,
     "stock": 100
   },
   {
     "nombre": "Spaguetti con bolognesa",
-    "descripcion": "Spaguetti con Bolognesa y queso",
-    "precio": 960,
-    "imagen": "https://www.hogarmania.com/archivos/202102/recetas-faciles-de-espaguetis-cena-romantica-1280x720x80xX.jpg",
+    "descripcion": "asdasdasdasdsadadasdasdasdsadsad",
+    "precio": 1200,
+    "imagen": "https://upload.wikimedia.org/wikipedia/commons/4/47/Hamburger_%28black_bg%29.jpg",
     "tipo": "Pastas",
     "puntaje": 5,
-    "stock": 78
+    "stock": 100
+  },
+  {
+    "nombre": "Spaguetti con crema",
+    "descripcion": "asdasdasdasdsadadasdasdasdsadsad",
+    "precio": 1200,
+    "imagen": "https://upload.wikimedia.org/wikipedia/commons/4/47/Hamburger_%28black_bg%29.jpg",
+    "tipo": "Pastas",
+    "puntaje": 5,
+    "stock": 100
   },
   {
     "nombre": "Ravioles de ricota",
-    "descripcion": "Ravioles de ricota y verdura con salsa liviana",
-    "precio": 1050,
-    "imagen": "https://recetas-rapidas.es/wp-content/uploads/2019/12/raviolis-de-bacalao.jpg",
+    "descripcion": "asdasdasdasdsadadasdasdasdsadsad",
+    "precio": 1200,
+    "imagen": "https://upload.wikimedia.org/wikipedia/commons/4/47/Hamburger_%28black_bg%29.jpg",
     "tipo": "Pastas",
     "puntaje": 5,
-    "stock": 83
+    "stock": 100
   },
   {
-    "nombre": "Filet de merluza",
-    "descripcion": "Filet de merluza tostado al limon y finas hierbas acompañado de papas al horno",
-    "precio": 890,
-    "imagen": "http://www.comedera.com/wp-content/uploads/2019/05/merluza-al-horno.jpg",
+    "nombre": "Trucha",
+    "descripcion": "asdasdasdasdsadadasdasdasdsadsad",
+    "precio": 1200,
+    "imagen": "https://upload.wikimedia.org/wikipedia/commons/4/47/Hamburger_%28black_bg%29.jpg",
     "tipo": "Pescado",
     "puntaje": 5,
-    "stock": 47
+    "stock": 100
   },
   {
-    "nombre": "Arroz con atun",
-    "descripcion": "Arroz con atun saborizado con verduras frescas",
-    "precio": 780,
-    "imagen": "https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.bonviveur.es%2Frecetas%2Farroz-con-atun-en-conserva&psig=AOvVaw0leaXMyoFlo00sCvSUzZtG&ust=1667607495555000&source=images&cd=vfe&ved=0CA0QjRxqFwoTCNDLqpWgk_sCFQAAAAAdAAAAABAE",
+    "nombre": "Atun con arroz",
+    "descripcion": "asdasdasdasdsadadasdasdasdsadsad",
+    "precio": 1200,
+    "imagen": "https://upload.wikimedia.org/wikipedia/commons/4/47/Hamburger_%28black_bg%29.jpg",
     "tipo": "Pescado",
     "puntaje": 5,
-    "stock": 42
+    "stock": 100
   },
   {
-    "nombre": "Coca Cola 2lts",
-    "descripcion": "Cocacola 2lts",
-    "precio": 530,
-    "imagen": "https://jumboargentina.vtexassets.com/arquivos/ids/666431-800-600?v=637674249891630000&width=800&height=600&aspect=true",
-    "tipo": "Bebidas",
+    "nombre": "Atun con arroz",
+    "descripcion": "asdasdasdasdsadadasdasdasdsadsad",
+    "precio": 1200,
+    "imagen": "https://upload.wikimedia.org/wikipedia/commons/4/47/Hamburger_%28black_bg%29.jpg",
+    "tipo": "Pescado",
     "puntaje": 5,
-    "stock": 90
-  },
-  {
-    "nombre": "Cerveza Corona",
-    "descripcion": "Cerveza corona 1lts",
-    "precio": 680,
-    "imagen": "https://statics.dinoonline.com.ar/imagenes/full_600x600_ma/3100145_f.jpg",
-    "tipo": "Bebidas",
-    "puntaje": 5,
-    "stock": 42
+    "stock": 100
   }
 ]

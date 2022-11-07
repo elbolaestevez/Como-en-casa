@@ -1,74 +1,16 @@
 const express = require("express");
 const router = express.Router();
 const { Cartas } = require("../models");
+const CartasController = require("../controllers/CartasController");
 
-router.post("/", (req, res) => {
-  const producto = req.body;
+router.post("/", CartasController.postcarta);
 
-  Cartas.create(producto)
+router.get("/", CartasController.getallcartas);
 
-    .then((productofinal) => {
-      res.status(201).send(productofinal);
-    })
-    .catch((err) => console.log(err));
-});
+router.get("/:id", CartasController.getonecarta);
 
-router.get("/", (req, res) => {
-  Cartas.findAll()
-    .then((users) => res.status(200).send(users))
-    .catch((err) => res.status(400).send(err));
-});
+router.put("/:id", CartasController.editonecarta);
 
-router.get("/:id", (req, res) => {
-  Cartas.findOne({
-    where: { id: req.params.id },
-  })
-    .then((producto) => res.status(200).send(producto))
-    .catch((err) => res.status(400).send(err));
-});
-router.put("/:id", (req, res) => {
-  const id = req.params.id;
-  Cartas.findByPk(id)
-    .then((producto) => producto.update(req.body))
-    .then((productoUpdated) => res.send(productoUpdated))
-    .catch((err) => res.status(400).send(err));
-});
-router.delete("/:id", (req, res) => {
-  const id = req.params.id;
-  Cartas.destroy({ where: { id } })
-    .then(() => res.send("Producto eliminado"))
-    .catch((err) => res.status(400).send(err));
-});
-
-//editar comentario
-router.put("/comentarios/:id", (req, res) => {
-  const id = req.params.id;
-
-  Cartas.findByPk(id)
-    .then((producto) =>
-      producto.update({
-        comentarios: [...producto.comentarios, req.body.comentarios],
-      })
-    )
-    .then((productoUpdated) => res.send(productoUpdated))
-    .catch((err) => res.status(400).send(err));
-});
-
-//editar puntaje
-router.put("/puntaje/:id", (req, res) => {
-  const id = req.params.id;
-
-  Cartas.findByPk(id)
-    .then((producto) => {
-      producto.contador++;
-      producto.puntaje =
-        (producto.puntaje + req.body.puntaje) / producto.contador;
-
-      producto.save();
-    })
-
-    .then((productoUpdated) => res.send(productoUpdated))
-    .catch((err) => res.status(400).send(err));
-});
+router.delete("/:id", CartasController.deleteonecarta);
 
 module.exports = router;
