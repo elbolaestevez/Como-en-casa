@@ -12,14 +12,14 @@ import axios from "axios";
 import { userLogin } from "../state/user";
 
 function App() {
-  
-  const dispatch = useDispatch()
-  useEffect(()=>{
-    axios.get("/api/users/me")
-    .then(res=>res.data)
-    .then(user=> dispatch(userLogin(user)))
-    .catch(()=>console.error("Falta loguearte"))
-  },[dispatch])
+  const dispatch = useDispatch();
+  useEffect(() => {
+    axios
+      .get("/api/users/me")
+      .then((res) => res.data)
+      .then((user) => dispatch(userLogin(user)))
+      .catch(() => console.error("Falta loguearte"));
+  }, [dispatch]);
 
   return (
     <div>
