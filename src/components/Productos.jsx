@@ -1,22 +1,8 @@
 import React from "react";
-import { useEffect, useState } from "react";
-import axios from "axios";
+
 import Card from "../common/Card";
 
-function Productos() {
-  const [products, setProducts] = useState([]);
-
-  //Pedido para obtener todos los productos
-  useEffect(() => {
-    axios
-      .get("http://localhost:3000/api/cartas")
-      .then((res) => res.data)
-      .then((cartas) => setProducts(cartas))
-      .catch((error) => console.error(error));
-  }, []);
-
-  // console.log(products);
-
+function Productos({ products }) {
   return (
     <div>
       <div className="container-navProductos">
