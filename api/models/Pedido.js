@@ -10,9 +10,9 @@ Pedido.init(
     detalle: {
       type: Sequelize.STRING,
     },
-    idcomprado: {
-      type: Sequelize.ARRAY(INTEGER),
-    },
+    // idcomprado: {
+    //   type: Sequelize.ARRAY(INTEGER),
+    // },
   },
   { sequelize: db, modelName: "pedido" }
 );
