@@ -13,9 +13,11 @@ import { userLogin } from "../state/user";
 import { useState } from "react";
 
 function App() {
+
   const [products, setProducts] = useState([]);
 
   //Pedido para obtener todos los productos
+  
   useEffect(() => {
     axios
       .get("http://localhost:3000/api/cartas")
