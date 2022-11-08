@@ -1,3 +1,34 @@
 .inicio_container {
-    height: 100vh;
+  height: 100%;
+  a {
+    text-decoration: none;
+  }
+  img {
+    width: 100%;
+    height: 100%;
+  }
+}
+.contentItemCarrusel {
+  height: 300px;
+  overflow: hidden;
+  width: 95%;
+  padding: 20px 0px 0px 90px;
+}
+.itemCarrusel {
+  height: 100%;
+  position: relative;
+}
+.imagenCarrusel {
+  height: 100%;
+}
+
+.flechasCarrusel {
+  height: 100%;
+  position: absolute;
+  top: 0;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px;
 }
