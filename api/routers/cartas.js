@@ -59,12 +59,13 @@ router.put("/puntaje/:id", (req, res) => {
   const id = req.params.id;
 
   Cartas.findByPk(id)
-    .then((producto) =>
-      producto.update({
-        puntaje: (producto.puntaje + req.body.puntaje) / producto.contador,
-        contador: producto.contador + 1,
-      })
-    )
+    .then((producto) => {
+      producto.contador++;
+      producto.puntaje =
+        (producto.puntaje + req.body.puntaje) / producto.contador;
+
+      producto.save();
+    })
 
     .then((productoUpdated) => res.send(productoUpdated))
     .catch((err) => res.status(400).send(err));
