@@ -5,6 +5,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import logo from "../assets/image/Logo-sin-fondo.png";
 import { userLogOut } from "../state/user";
+import {BsCart} from "react-icons/bs"
 
 function Navbar() {
   const dispatch = useDispatch()
@@ -35,20 +36,24 @@ function Navbar() {
             <li>
               <a>Contacto</a>
             </li>
-            {user.id ? (
+            {user.id ? (<>
               <li><a> <FaUserCheck /> </a>
                 <ul>
                   <li> <a>Historial</a></li>
                   <li><Link  onClick={handlerLogOut}>Log Out</Link></li>
                 </ul>
               </li>
-            ) : (
+              <a ><BsCart/></a>
+              </>
+            ) : (<>
               <li><a><FaUserCircle /></a>
                 <ul>
                   <li><Link to="login">Login</Link></li>
                   <li><Link to="registro">Registrarse</Link></li>
                 </ul>
               </li>
+              <a className="carrito"><BsCart/></a>
+              </>
             )}
           </ul>
         </div>
