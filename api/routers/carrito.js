@@ -14,7 +14,7 @@ router.post("/", async (req, res) => {
     const carta = await Cartas.findOne({
       where: { id: idcarta },
     });
-    console.log("hola", carta);
+
     const carrito = await Carrito.create({ detalle: detalle });
 
     await carrito.setAuthor(usuario);

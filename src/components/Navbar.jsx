@@ -41,12 +41,29 @@ function Navbar() {
             {user.id ? (<>
               <li><a> <FaUserCheck /> </a>
                 <ul>
-                  <li> <a>Historial</a></li>
-                  <li><Link  onClick={handlerLogOut}>Log Out</Link></li>
+                  <li>
+                    <a>Historial</a>
+                  </li>
+                  <li>
+                    <Link onClick={handlerLogOut}>Log Out</Link>
+                  </li>
+                </ul>
+              </li>
+            ) : (
+              <li>
+                <a>
+                  <FaUserCircle />
+                </a>
+                <ul>
+                  <li>
+                    <Link to="login">Login</Link>
+                  </li>
+                  <li>
+                    <Link to="registro">Registrarse</Link>
+                  </li>
                 </ul>
               </li>
               <a className="carrito"><BsCart/></a>
-
             {user.superAdmin ? (
               <>
                 <li>
@@ -122,6 +139,11 @@ function Navbar() {
                 </a>
               </>
             )}
+            <li>
+              <Link to="carrito">
+                <BsCart />
+              </Link>
+            </li>
           </ul>
         </div>
       </div>
