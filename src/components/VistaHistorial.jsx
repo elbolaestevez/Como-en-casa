@@ -57,4 +57,4 @@ function VistaHistorial() {
   );
 }
 
-export default vistaHistorial;
+export default VistaHistorial;
