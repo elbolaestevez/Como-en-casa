@@ -11,15 +11,18 @@ import { useDispatch } from "react-redux";
 import axios from "axios";
 import { userLogin } from "../state/user";
 import { useState } from "react";
+import VistaAdminUsuarios from "./VistaAdminUsuarios";
+import { useSelector } from "react-redux";
 
 function App() {
   const [products, setProducts] = useState([]);
+  const user = useSelector((state) => state.user);
 
   //Pedido para obtener todos los productos
 
   useEffect(() => {
     axios
-      .get("http://localhost:3000/api/cartas")
+      .get("/api/cartas")
       .then((res) => res.data)
       .then((cartas) => setProducts(cartas))
       .catch((error) => console.error(error));
@@ -28,10 +31,10 @@ function App() {
   const dispatch = useDispatch();
   useEffect(() => {
     axios
-      .get("/api/users/me")
+      .get('/api/users/me')
       .then((res) => res.data)
       .then((user) => dispatch(userLogin(user)))
-      .catch(() => console.error("Falta loguearte"));
+      .catch(() => console.error('Falta loguearte'));
   }, [dispatch]);
 
   return (
@@ -46,7 +49,18 @@ function App() {
           element={<Productos products={products} />}
         ></Route>
         <Route path="/productos/:id" element={<ProductoDetallado />}></Route>
+        {user.superAdmin ? (
+          <Route path="/admin/users" element={<VistaAdminUsuarios />}></Route>
+        ) : (
+          // <Route path="/" element={<Inicio products={products} />}></Route>
+          // <h1>NECESITAS SER ADMIN PARA ENTRAR A ESTA DIRECCION</h1>
+          ""
+          /* La idea es que si no sos admin poniendo la direccion para editar usuarios
+          se te redirija a la pagina de inicio o a una nueva pagina que se indique que no sos admin
+          o un alerta, etc*/
+        )}
       </Routes>
+      <VistaHistorial />
       <Footer />
     </div>
   );
