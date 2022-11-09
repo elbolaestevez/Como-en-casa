@@ -1,0 +1,18 @@
+.tabla {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 20vh auto;
+}
+
+table,
+th,
+td {
+  border: 1px dashed;
+  text-align: center;
+}
+
+th,
+td {
+  padding: 10px;
+}

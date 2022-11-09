@@ -17,13 +17,32 @@ router.post("/", async (req, res) => {
       },
       include: [{ model: Users, as: "author" }, "cartas"],
     });
-    for (let i = 0; i < usuariocarrito.length; i++) {
-      const pedido = await Pedido.create({
-        detalle: detalle,
-      });
+    const pedidos = await Pedido.findAll({
+      include: [{ model: Users, as: "ordenfinalizada" }, "cartas"],
+    });
+    console.log(pedidos);
 
-      await pedido.setOrdenfinalizada(user);
-      await pedido.addCartas(usuariocarrito[i].dataValues.cartas[0]);
+    for (let i = 0; i < usuariocarrito.length; i++) {
+      if (pedidos[1]) {
+        let pedido = await Pedido.create({
+          detalle: detalle,
+          idpedido: pedidos[pedidos.length - 1].idpedido + 1,
+        });
+
+        await pedido.setOrdenfinalizada(user);
+        await pedido.addCartas(usuariocarrito[i].dataValues.cartas[0]);
+
+        //
+      } else {
+        console.log("hola");
+        let pedido = await Pedido.create({
+          detalle: detalle,
+          idpedido: 1,
+        });
+
+        await pedido.setOrdenfinalizada(user);
+        await pedido.addCartas(usuariocarrito[i].dataValues.cartas[0]);
+      }
     }
 
     //solucion1
@@ -64,6 +83,7 @@ router.get("/", (req, res) => {
 
 router.get("/:email", async (req, res) => {
   const email = req.params.email;
+
   try {
     const user = await Users.findOne({
       where: { email },
@@ -71,7 +91,7 @@ router.get("/:email", async (req, res) => {
 
     const usuariopedido = await Pedido.findAll({
       where: {
-        authorId: user.id,
+        ordenfinalizadaId: user.id,
       },
       include: [{ model: Users, as: "ordenfinalizada" }, "cartas"],
     });
