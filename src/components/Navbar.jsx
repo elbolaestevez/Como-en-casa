@@ -5,17 +5,18 @@ import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import logo from "../assets/image/Logo-sin-fondo.png";
 import { userLogOut } from "../state/user";
-import {BsCart} from "react-icons/bs"
+import { BsCart } from "react-icons/bs";
 
 function Navbar() {
-  const dispatch = useDispatch()
+  const dispatch = useDispatch();
   const user = useSelector((state) => state.user);
 
   const handlerLogOut = () => {
-    axios.post("/api/users/logout")
-    .then(res=> res.data)
-    .then(()=> dispatch(userLogOut()))
-    .catch(()=>alert("No se pudo cerrar sesion."))
+    axios
+      .post("/api/users/logout")
+      .then((res) => res.data)
+      .then(() => dispatch(userLogOut()))
+      .catch(() => alert("No se pudo cerrar sesion."));
   };
 
   return (
@@ -36,23 +37,78 @@ function Navbar() {
             <li>
               <a>Contacto</a>
             </li>
-            {user.id ? (<>
-              <li><a> <FaUserCheck /> </a>
-                <ul>
-                  <li> <a>Historial</a></li>
-                  <li><Link  onClick={handlerLogOut}>Log Out</Link></li>
-                </ul>
-              </li>
-              <a ><BsCart/></a>
+            {user.superAdmin ? (
+              <>
+                <li>
+                  <a>
+                    <FaUserCheck />
+                  </a>
+                  <ul>
+                    <li>
+                      <Link to="/admin/users">Usuarios</Link>
+                    </li>
+                    <li>
+                      <a>Historial</a>
+                    </li>
+                    <li>
+                      <Link onClick={handlerLogOut}>Log Out</Link>
+                    </li>
+                  </ul>
+                </li>
               </>
-            ) : (<>
-              <li><a><FaUserCircle /></a>
-                <ul>
-                  <li><Link to="login">Login</Link></li>
-                  <li><Link to="registro">Registrarse</Link></li>
-                </ul>
-              </li>
-              <a className="carrito"><BsCart/></a>
+            ) : user.tipo ? (
+              <>
+                <li>
+                  <a>
+                    <FaUserCheck />
+                  </a>
+                  <ul>
+                    <li>
+                      <a>Historial</a>
+                    </li>
+                    <li>
+                      <Link onClick={handlerLogOut}>Log Out</Link>
+                    </li>
+                  </ul>
+                </li>
+              </>
+            ) : user.id ? (
+              <>
+                <li>
+                  <a>
+                    <FaUserCheck />
+                  </a>
+                  <ul>
+                    <li>
+                      <a>Historial</a>
+                    </li>
+                    <li>
+                      <Link onClick={handlerLogOut}>Log Out</Link>
+                    </li>
+                  </ul>
+                </li>
+                <a>
+                  <BsCart />
+                </a>
+              </>
+            ) : (
+              <>
+                <li>
+                  <a>
+                    <FaUserCircle />
+                  </a>
+                  <ul>
+                    <li>
+                      <Link to="login">Login</Link>
+                    </li>
+                    <li>
+                      <Link to="registro">Registrarse</Link>
+                    </li>
+                  </ul>
+                </li>
+                <a className="carrito">
+                  <BsCart />
+                </a>
               </>
             )}
           </ul>
