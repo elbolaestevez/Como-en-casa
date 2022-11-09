@@ -16,7 +16,6 @@ function ProductoDetallado() {
       .then((res) => setProducto(res.data))
       .catch((error) => console.error(error));
   }, [id]);
-
   //Evento click para agregar pedido al carrito
   const handleAdd = () => {
     axios.post("/api/carrito",{email: user.email, idcarta: id, detalle: null})

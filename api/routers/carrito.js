@@ -6,18 +6,21 @@ const { Carrito, Users, Cartas } = require("../models");
 router.post("/", async (req, res) => {
   try {
     const { email, idcarta, detalle } = req.body;
-
+    console.log("reqbody", req.body);
+    //encontrar el usuario
     const usuario = await Users.findOne({
       where: { email },
     });
-
+    //encuentro el producto
     const carta = await Cartas.findOne({
       where: { id: idcarta },
     });
 
     const carrito = await Carrito.create({ detalle: detalle });
+    // establecer las relaciones
 
     await carrito.setAuthor(usuario);
+
     await carrito.addCartas(carta);
     res.send(carrito);
   } catch (error) {

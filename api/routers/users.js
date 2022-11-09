@@ -30,6 +30,7 @@ router.post('/login', (req, res) => {
           tipo: user.tipo,
           superAdmin: user.superAdmin,
           acumulado: user.acumulado,
+          tipo: user.tipo,
         };
         // genero el token con el payload creado
         let token = generateToken(payload);

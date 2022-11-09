@@ -4,6 +4,7 @@ import Navbar from "./Navbar";
 import Inicio from "./Inicio";
 import Productos from "./Productos";
 import Footer from "./Footer";
+import VistaHistorial from "./VistaHistorial";
 import { Route, Routes } from "react-router";
 import ProductoDetallado from "../common/ProductoDetallado";
 import { useEffect } from "react";
@@ -47,6 +48,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Inicio products={products} />}></Route>
         <Route path="login" element={<Login />}></Route>
+        <Route path="historial" element={<VistaHistorial />}></Route>
         <Route path="registro" element={<Registro />}></Route>
         <Route path="carrito" element={<CarritoDeCompras />}></Route>
         <Route path="pagoTarjeta" element={<Pago />}></Route>
@@ -64,7 +66,6 @@ function App() {
           o un alerta, etc*/
         )}
       </Routes>
-      <VistaHistorial />
       <Footer />
     </div>
   );

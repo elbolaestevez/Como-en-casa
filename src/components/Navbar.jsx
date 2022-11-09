@@ -37,12 +37,11 @@ function Navbar() {
             <li>
               <a>Contacto</a>
             </li>
-
             {user.id ? (<>
               <li><a> <FaUserCheck /> </a>
                 <ul>
                   <li>
-                    <a>Historial</a>
+                    <Link to="historial">Historial</Link>
                   </li>
                   <li>
                     <Link onClick={handlerLogOut}>Log Out</Link>
