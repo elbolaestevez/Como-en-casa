@@ -37,32 +37,6 @@ function Navbar() {
             <li>
               <a>Contacto</a>
             </li>
-            {user.id ? (<>
-              <li><a> <FaUserCheck /> </a>
-                <ul>
-                  <li>
-                    <Link to="historial">Historial</Link>
-                  </li>
-                  <li>
-                    <Link onClick={handlerLogOut}>Log Out</Link>
-                  </li>
-                </ul>
-              </li>
-            ) : (
-              <li>
-                <a>
-                  <FaUserCircle />
-                </a>
-                <ul>
-                  <li>
-                    <Link to="login">Login</Link>
-                  </li>
-                  <li>
-                    <Link to="registro">Registrarse</Link>
-                  </li>
-                </ul>
-              </li>
-              <a className="carrito"><BsCart/></a>
             {user.superAdmin ? (
               <>
                 <li>
@@ -74,7 +48,9 @@ function Navbar() {
                       <Link to="/admin/users">Usuarios</Link>
                     </li>
                     <li>
-                      <a>Historial</a>
+                      <Link to="historial">
+                      Historial
+                      </Link>
                     </li>
                     <li>
                       <Link onClick={handlerLogOut}>Log Out</Link>
@@ -91,7 +67,9 @@ function Navbar() {
                   </a>
                   <ul>
                     <li>
-                      <a>Historial</a>
+                    <Link to="historial">
+                      Historial
+                      </Link>
                     </li>
                     <li>
                       <Link onClick={handlerLogOut}>Log Out</Link>
@@ -107,16 +85,15 @@ function Navbar() {
                   </a>
                   <ul>
                     <li>
-                      <a>Historial</a>
+                    <Link to="historial">
+                      Historial
+                      </Link>
                     </li>
                     <li>
                       <Link onClick={handlerLogOut}>Log Out</Link>
                     </li>
                   </ul>
                 </li>
-                <a>
-                  <BsCart />
-                </a>
               </>
             ) : (
               <>
@@ -133,9 +110,6 @@ function Navbar() {
                     </li>
                   </ul>
                 </li>
-                <a className="carrito">
-                  <BsCart />
-                </a>
               </>
             )}
             <li>
