@@ -43,7 +43,7 @@ function Navbar() {
                   <li><Link  onClick={handlerLogOut}>Log Out</Link></li>
                 </ul>
               </li>
-              <a ><BsCart/></a>
+              <a className="carrito"><BsCart/></a>
               </>
             ) : (<>
               <li><a><FaUserCircle /></a>
