@@ -27,6 +27,7 @@ router.post("/login", (req, res) => {
           id: user.id,
           nombre: user.nombre,
           email: user.email,
+          tipo: user.tipo,
           acumulado: user.acumulado,
         };
         // genero el token con el payload creado

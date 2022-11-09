@@ -47,7 +47,8 @@ Users.init(
     },
     // Solo puede ser tipo: User o tipo:Admin, el admin es capaz de modificar todo, un solo admin o muchos, tienen todos los permisos.
     tipo: {
-      type: Sequelize.STRING,
+      type: Sequelize.BOOLEAN,
+      defaultValue: false,
     },
     salt: {
       type: Sequelize.STRING,
