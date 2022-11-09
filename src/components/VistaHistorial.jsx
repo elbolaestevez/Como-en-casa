@@ -1,56 +1,58 @@
-import React from 'react';
+import React, { useEffect, useState } from "react";
+import { useSelector } from "react-redux";
+import axios from "axios";
 
-function vistaHistorial() {
+function VistaHistorial() {
+  const user = useSelector((state) => state.user);
+
+  const [ordenes, setordenes] = useState([]);
+  console.log("user", user.email);
+
+  useEffect(() => {
+    axios
+      .get(`/api/pedido/${user.email}`)
+      .then((res) => setordenes(res.data))
+      .catch((error) => console.error(error));
+  }, [user.email]);
+
+  useEffect(() => {
+    axios
+      .get(`/api/pedido`)
+      .then((res) => setordenes(res.data))
+      .catch((error) => console.error(error));
+  }, [user.tipo]);
+
   return (
-    <div className='containerTabla'>
-      <div className='tabla'>
+    <div className="containerTabla">
+      <div className="tabla">
         <table>
           <tr>
             <th>PEDIDO</th>
+            <th>Nombre</th>
+            <th>Usuario</th>
             <th>IMPORTE</th>
-            <th>ENTREGADO</th>
             <th>FECHA</th>
             <th>HORARIO</th>
           </tr>
-          <tr>
-            <td>1</td>
-            <td>$150.57</td>
-            <td>si</td>
-            <td>21/10/22</td>
-            <td>20:35 hs</td>
-          </tr>
-          <tr>
-            <td>2</td>
-            <td>$390.20</td>
-            <td>no</td>
-            <td>21/10/22</td>
-            <td>20:35 hs</td>
-          </tr>
-          <tr>
-            <td>3</td>
-            <td>$1000.00</td>
-            <td>si</td>
-            <td>21/10/22</td>
-            <td>20:35 hs</td>
-          </tr>
-          <tr>
-            <td>4</td>
-            <td>$95.10</td>
-            <td>si</td>
-            <td>10/10/22</td>
-            <td>20:35 hs</td>
-          </tr>
-          <tr>
-            <td>5</td>
-            <td>$700.99</td>
-            <td>si</td>
-            <td>18/10/22</td>
-            <td>20:35 hs</td>
-          </tr>
+
+          {ordenes.map((orden) => {
+            const { nombre, precio } = orden.cartas[0];
+            return (
+              <tr>
+                <td>{orden.idpedido}</td>
+                <td>{nombre}</td>
+                <td>{orden.ordenfinalizada.email}</td>
+                <td>{precio}</td>
+
+                <td>{orden.createdAt.slice(0, 10)}hs</td>
+                <td>{orden.createdAt.slice(11, 19)}hs</td>
+              </tr>
+            );
+          })}
         </table>
       </div>
     </div>
   );
 }
 
-export default vistaHistorial;
+export default VistaHistorial;
