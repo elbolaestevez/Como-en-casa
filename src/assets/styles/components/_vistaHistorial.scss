@@ -1,0 +1,16 @@
+.containerTabla{
+    width:100vw ;
+    height: 80vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+}
+
+table,
+th,
+td {
+  border: 1px dashed;
+  text-align: center;
+}
+

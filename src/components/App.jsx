@@ -19,6 +19,7 @@ function App() {
   const user = useSelector((state) => state.user);
 
   //Pedido para obtener todos los productos
+
   useEffect(() => {
     axios
       .get("/api/cartas")
@@ -30,10 +31,10 @@ function App() {
   const dispatch = useDispatch();
   useEffect(() => {
     axios
-      .get("/api/users/me")
+      .get('/api/users/me')
       .then((res) => res.data)
       .then((user) => dispatch(userLogin(user)))
-      .catch(() => console.error("Falta loguearte"));
+      .catch(() => console.error('Falta loguearte'));
   }, [dispatch]);
 
   return (
@@ -59,6 +60,7 @@ function App() {
           o un alerta, etc*/
         )}
       </Routes>
+      <VistaHistorial />
       <Footer />
     </div>
   );
