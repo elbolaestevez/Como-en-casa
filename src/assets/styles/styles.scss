@@ -12,11 +12,10 @@
 @import './components//carritoDeCompras';
 @import './components/pagoTarjeta';
 @import './components/pagoEfectivo';
-
-//common
-@import './common/grillaDeProductos';
-@import './common/productosDetallados';
-
+@import "./components/vistaAdminUsuarios";
 @import './components/vistaHistorial';
 
+//common
 @import './common/TableCarritoDeCompras';
+@import "./common/grillaDeProductos";
+@import "./common/productosDetallados";

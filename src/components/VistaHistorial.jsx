@@ -1,3 +1,4 @@
+
 import React, { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
 import axios from "axios";
@@ -49,10 +50,11 @@ function VistaHistorial() {
               </tr>
             );
           })}
+
         </table>
       </div>
     </div>
   );
 }
 
-export default VistaHistorial;
+export default vistaHistorial;

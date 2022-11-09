@@ -1,9 +1,10 @@
 import React, { useEffect, useState } from "react";
-import { useParams } from "react-router";
+import { useNavigate, useParams } from "react-router";
 import axios from "axios";
 import { useSelector } from "react-redux";
 
 function ProductoDetallado() {
+  const navigate = useNavigate()
   const { id } = useParams();
   const user = useSelector((state) => state.user);
 
@@ -11,21 +12,21 @@ function ProductoDetallado() {
 
   useEffect(() => {
     axios
-      .get(`http://localhost:3000/api/cartas/${id}`)
+      .get(`/api/cartas/${id}`)
       .then((res) => setProducto(res.data))
       .catch((error) => console.error(error));
   }, [id]);
+  //Evento click para agregar pedido al carrito
   const handleAdd = () => {
-    console.log("id", id, "email", user.email);
-    axios
-      .post("http://localhost:3000/api/carrito", {
-        email: user.email,
-        idcarta: id,
-        detalle: "hola",
-      })
-      .then((res) => res.data)
-      .catch(() => alert("Inicia sesion para agregar al carrito"));
+    axios.post("/api/carrito",{email: user.email, idcarta: id, detalle: null})
+    .then((res)=> res.data)
+    .then(()=> alert("Añadido al carrito con exito"))
+    .catch(()=> {
+      alert("Inicia sesion para agregar al carrito")
+      navigate("/login")
+    })
   };
+
   return (
     <div className="productoDetallado">
       <div className="card-productoDetallado">

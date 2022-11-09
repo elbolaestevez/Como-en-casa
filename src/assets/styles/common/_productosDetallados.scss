@@ -69,3 +69,87 @@
   border-radius: 5px;
   cursor: pointer;
 }
+.buttonEdit{
+  color: black;
+  font-size: 1.50rem;
+  border: none;
+  background-color: #ed6a5a;
+  cursor: pointer;
+  
+}
+
+.buttonEdit:hover {
+  color:$navbar_a_hover_main;
+  }
+
+.buttonRemove{
+  color: black;
+  font-size: 1.50rem;
+  border: none;
+  background-color: #ed6a5a;
+  cursor: pointer;
+}
+
+.buttonRemove:hover{
+  color:$navbar_a_hover_main;
+}
+
+
+body.active-modal {
+  overflow-y: hidden;
+}
+
+.btn-modal {
+  padding: 10px 20px;
+  display: block;
+  margin: 100px auto 0;
+  font-size: 18px;
+}
+
+.modal, .overlay {
+  width: 100vw;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  position: fixed;
+}
+
+.overlay {
+  background: rgba(49,49,49,0.8);
+}
+.modal-content {
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  line-height: 1.4;
+  background: #ed6a5a;
+  padding: 14px 28px;
+  border-radius: 3px;
+  max-width: 600px;
+  min-width: 300px;
+}
+
+
+.close-modal {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  padding: 5px 7px;
+}
+
+.card-edicion{
+  
+  width: 300px;
+  height: 200px;
+  background-color: #ed6a5a;
+  input{
+    margin: 15px;
+    background-color: white;
+      border: 1px solid #b1b6bd;
+      padding: 8px;
+      font-size: 10px;
+  }
+}

@@ -37,16 +37,77 @@ function Navbar() {
             <li>
               <a>Contacto</a>
             </li>
-            {user.id ? (
+            {user.id ? (<>
+              <li><a> <FaUserCheck /> </a>
+                <ul>
+                  <li>
+                    <Link to="historial">Historial</Link>
+                  </li>
+                  <li>
+                    <Link onClick={handlerLogOut}>Log Out</Link>
+                  </li>
+                </ul>
+              </li>
+            ) : (
+              <li>
+                <a>
+                  <FaUserCircle />
+                </a>
+                <ul>
+                  <li>
+                    <Link to="login">Login</Link>
+                  </li>
+                  <li>
+                    <Link to="registro">Registrarse</Link>
+                  </li>
+                </ul>
+              </li>
+              <a className="carrito"><BsCart/></a>
+            {user.superAdmin ? (
               <>
                 <li>
                   <a>
-                    {" "}
-                    <FaUserCheck />{" "}
+                    <FaUserCheck />
                   </a>
                   <ul>
                     <li>
-                      <Link to="historial">Historial</Link>
+                      <Link to="/admin/users">Usuarios</Link>
+                    </li>
+                    <li>
+                      <a>Historial</a>
+                    </li>
+                    <li>
+                      <Link onClick={handlerLogOut}>Log Out</Link>
+                    </li>
+                  </ul>
+                </li>
+
+              </>
+            ) : user.tipo ? (
+              <>
+                <li>
+                  <a>
+                    <FaUserCheck />
+                  </a>
+                  <ul>
+                    <li>
+                      <a>Historial</a>
+                    </li>
+                    <li>
+                      <Link onClick={handlerLogOut}>Log Out</Link>
+                    </li>
+                  </ul>
+                </li>
+              </>
+            ) : user.id ? (
+              <>
+                <li>
+                  <a>
+                    <FaUserCheck />
+                  </a>
+                  <ul>
+                    <li>
+                      <a>Historial</a>
                     </li>
                     <li>
                       <Link onClick={handlerLogOut}>Log Out</Link>
@@ -77,6 +138,11 @@ function Navbar() {
                 </a>
               </>
             )}
+            <li>
+              <Link to="carrito">
+                <BsCart />
+              </Link>
+            </li>
           </ul>
         </div>
       </div>
