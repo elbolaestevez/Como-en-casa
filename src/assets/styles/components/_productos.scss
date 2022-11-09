@@ -6,7 +6,7 @@
   align-items: center;
   top: 0;
   position: sticky;
-  z-index: 1;
+  z-index: 0;
 }
 
 .items-navProductos {
@@ -28,4 +28,86 @@
 
 .items-navProductos li {
   list-style: none;
+}
+
+.buttonAdd {
+  background: none;
+  width: 60px;
+  color: $navbar_letter_main;
+  font-size: 3.25rem;
+  border: none;
+  cursor: pointer;
+  margin-left: 5px;
+}
+.buttonAdd:hover {
+  color: $navbar_a_hover_main;
+}
+.cadaProducto {
+  display: flex;
+}
+
+
+
+
+body.active-modal {
+  overflow-y: hidden;
+}
+
+.modal, .overlay {
+  width: 100vw;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  position: fixed;
+}
+
+.overlay {
+  background: rgba(49,49,49,0.8);
+}
+.modal-content {
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  line-height: 1.4;
+  background: #ed6a5a;
+  padding: 14px 28px;
+  border-radius: 3px;
+  max-width: 600px;
+  min-width: 300px;
+}
+
+
+.close-modal {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  padding: 5px 7px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+.agregarProducto {
+  z-index: 1;
+  width: 40%;
+  height: 20%;
+  background-color: #ed6a5a;
+  input {
+    margin: 15px;
+    background-color: white;
+    border: 1px solid #b1b6bd;
+    padding: 8px;
+    font-size: 10px;
+  }
 }

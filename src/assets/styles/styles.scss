@@ -1,20 +1,21 @@
 //base
-@import "./base/global";
+@import './base/global';
 
 //componentes
-@import "./components/app";
-@import "./components/navbar";
-@import "./components/loggin";
-@import "./components/registro";
-@import "./components/productos";
-@import "./components/Inicio";
-@import "./components/footer";
-@import "./components//carritoDeCompras";
-@import "./components/pagoTarjeta";
-@import "./components/pagoEfectivo";
+@import './components/app';
+@import './components/navbar';
+@import './components/loggin';
+@import './components/registro';
+@import './components/productos';
+@import './components/Inicio';
+@import './components/footer';
+@import './components//carritoDeCompras';
+@import './components/pagoTarjeta';
+@import './components/pagoEfectivo';
 
 //common
 @import "./common/grillaDeProductos";
 @import "./common/productosDetallados";
 @import "./common/TableCarritoDeCompras";
-
+@import "./components/vistaAdminUsuarios";
+@import './components/vistaHistorial';
