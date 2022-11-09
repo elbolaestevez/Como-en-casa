@@ -11,6 +11,9 @@ import { useDispatch } from "react-redux";
 import axios from "axios";
 import { userLogin } from "../state/user";
 import { useState } from "react";
+import CarritoDeCompras from "./CarritoDeCompras";
+import Pago from "./PagoTarjeta";
+import PagoEfectivo from "./PagoEfectivo";
 
 function App() {
 
@@ -20,12 +23,13 @@ function App() {
   
   useEffect(() => {
     axios
-      .get("http://localhost:3000/api/cartas")
+      .get("/api/cartas")
       .then((res) => res.data)
       .then((cartas) => setProducts(cartas))
       .catch((error) => console.error(error));
   }, []);
 
+  //Persistencia de usuario a cierra o refresh de pagina
   const dispatch = useDispatch();
   useEffect(() => {
     axios
@@ -42,10 +46,10 @@ function App() {
         <Route path="/" element={<Inicio products={products} />}></Route>
         <Route path="login" element={<Login />}></Route>
         <Route path="registro" element={<Registro />}></Route>
-        <Route
-          path="productos"
-          element={<Productos products={products} />}
-        ></Route>
+        <Route path="carrito" element={<CarritoDeCompras />}></Route>
+        <Route path="pagoTarjeta" element={<Pago />}></Route>
+        <Route path="pagoEfectivo" element={<PagoEfectivo />}></Route>
+        <Route path="productos" element={<Productos products={products} />}></Route>
         <Route path="/productos/:id" element={<ProductoDetallado />}></Route>
       </Routes>
       <Footer />
