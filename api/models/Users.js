@@ -49,10 +49,12 @@ Users.init(
     tipo: {
       type: Sequelize.BOOLEAN,
       defaultValue: false,
+
     },
     superAdmin: {
       type: Sequelize.BOOLEAN,
       defaultValue: false,
+
     },
     salt: {
       type: Sequelize.STRING,

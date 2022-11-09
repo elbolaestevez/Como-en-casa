@@ -37,6 +37,16 @@ function Navbar() {
             <li>
               <a>Contacto</a>
             </li>
+
+            {user.id ? (<>
+              <li><a> <FaUserCheck /> </a>
+                <ul>
+                  <li> <a>Historial</a></li>
+                  <li><Link  onClick={handlerLogOut}>Log Out</Link></li>
+                </ul>
+              </li>
+              <a className="carrito"><BsCart/></a>
+
             {user.superAdmin ? (
               <>
                 <li>
@@ -55,6 +65,7 @@ function Navbar() {
                     </li>
                   </ul>
                 </li>
+
               </>
             ) : user.tipo ? (
               <>
