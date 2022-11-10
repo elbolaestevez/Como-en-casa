@@ -1,6 +1,7 @@
 const express = require("express");
 const router = express.Router();
 const { Pedido, Users, Cartas, Carrito } = require("../models");
+const enviarEmail = require("../config/nodemailer");
 
 // me crea un producto en el pedido
 router.post("/", async (req, res) => {
@@ -31,7 +32,6 @@ router.post("/", async (req, res) => {
 
         await pedido.setOrdenfinalizada(user);
         await pedido.addCartas(usuariocarrito[i].dataValues.cartas[0]);
-
         //
       } else {
         console.log("hola");
@@ -44,6 +44,8 @@ router.post("/", async (req, res) => {
         await pedido.addCartas(usuariocarrito[i].dataValues.cartas[0]);
       }
     }
+
+    enviarEmail(email);
 
     //solucion1
     ////////////////////////
