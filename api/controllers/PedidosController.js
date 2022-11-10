@@ -1,4 +1,5 @@
 const { Carrito, Users, Cartas } = require("../models");
+const enviarEmail = require("../config/nodemailer");
 
 // me crea un producto en el pedido
 const crearpedido = async (req, res) => {
@@ -40,7 +41,7 @@ const crearpedido = async (req, res) => {
         await pedido.addCartas(usuariocarrito[i].dataValues.cartas[0]);
       }
     }
-
+    enviarEmail(email);
     //solucion1
     ////////////////////////
     // let pedidos = [];

@@ -1,10 +1,9 @@
 const express = require("express");
 const router = express.Router();
 const { Pedido, Users, Cartas, Carrito } = require("../models");
-const enviarEmail = require("../config/nodemailer");
+
 const PedidoController = require("../controllers/PedidosController");
 const validateAuth = require("../middleware/auth");
-enviarEmail(email);
 // me crea un producto en el pedido
 router.post("/", validateAuth, PedidoController.crearpedido);
 
