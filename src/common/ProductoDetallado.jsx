@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router";
 import axios from "axios";
 import { useSelector } from "react-redux";
+import { Link } from "react-router-dom";
 
 function ProductoDetallado() {
   const navigate = useNavigate()
@@ -30,6 +31,11 @@ function ProductoDetallado() {
   return (
     <div className="productoDetallado">
       <div className="card-productoDetallado">
+          <Link to="/productos">
+            <button className="volver">
+              Volver atras
+            </button>
+          </Link>
         <div className="img-productoDetallado">
           <div className="container-img">
             <img src={producto.imagen} alt="" />
