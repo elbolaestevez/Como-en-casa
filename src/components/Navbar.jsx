@@ -32,7 +32,7 @@ function Navbar() {
               <Link to="productos">Productos</Link>
             </li>
             <li>
-              <a>Nosotros</a>
+              <Link to="/nosotros">Nosotros</Link>
             </li>
             <li>
               <Link to="contacto">
@@ -50,16 +50,13 @@ function Navbar() {
                       <Link to="/admin/users">Usuarios</Link>
                     </li>
                     <li>
-                      <Link to="historial">
-                      Historial
-                      </Link>
+                      <Link to="historial">Historial</Link>
                     </li>
                     <li>
                       <Link onClick={handlerLogOut}>Log Out</Link>
                     </li>
                   </ul>
                 </li>
-
               </>
             ) : user.tipo ? (
               <>
@@ -70,9 +67,7 @@ function Navbar() {
                   </a>
                   <ul>
                     <li>
-                    <Link to="historial">
-                      Historial
-                      </Link>
+                      <Link to="historial">Historial</Link>
                     </li>
                     <li>
                       <Link onClick={handlerLogOut}>Log Out</Link>
@@ -89,9 +84,7 @@ function Navbar() {
                   </a>
                   <ul>
                     <li>
-                    <Link to="historial">
-                      Historial
-                      </Link>
+                      <Link to="historial">Historial</Link>
                     </li>
                     <li>
                       <Link onClick={handlerLogOut}>Log Out</Link>

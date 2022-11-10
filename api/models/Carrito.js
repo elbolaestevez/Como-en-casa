@@ -12,6 +12,10 @@ Carrito.init(
     comprado: {
       type: Sequelize.BOOLEAN,
     },
+    cantidad: {
+      type: Sequelize.INTEGER,
+      defaultValue: 0,
+    },
   },
   { sequelize: db, modelName: "carrito" }
 );

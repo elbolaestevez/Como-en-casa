@@ -18,6 +18,8 @@ import PagoEfectivo from "./PagoEfectivo";
 import VistaAdminUsuarios from "./VistaAdminUsuarios";
 import { useSelector } from "react-redux";
 import Contacto from "./Contacto";
+import VistaNosotros from "./VistaNosotros";
+
 
 function App() {
   const [products, setProducts]=useState([])
@@ -37,10 +39,10 @@ function App() {
   const dispatch = useDispatch();
   useEffect(() => {
     axios
-      .get('/api/users/me')
+      .get("/api/users/me")
       .then((res) => res.data)
       .then((user) => dispatch(userLogin(user)))
-      .catch(() => console.error('Falta loguearte'));
+      .catch(() => console.error("Falta loguearte"));
   }, [dispatch]);
 
   return (
@@ -55,7 +57,14 @@ function App() {
         <Route path="carrito" element={<CarritoDeCompras />}></Route>
         <Route path="pagoTarjeta" element={<Pago />}></Route>
         <Route path="pagoEfectivo" element={<PagoEfectivo />}></Route>
+
         <Route path="productos" element={<Productos />}></Route>
+
+        /*<Route
+          path="productos"
+          element={<Productos products={products} />}
+        ></Route>*/
+
         <Route path="/productos/:id" element={<ProductoDetallado />}></Route>
         {user.superAdmin ? (
           <Route path="/admin/users" element={<VistaAdminUsuarios />}></Route>
@@ -67,6 +76,7 @@ function App() {
           se te redirija a la pagina de inicio o a una nueva pagina que se indique que no sos admin
           o un alerta, etc*/
         )}
+        <Route path="/nosotros" element={<VistaNosotros />}></Route>
       </Routes>
       <Footer />
     </div>
