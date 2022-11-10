@@ -35,7 +35,9 @@ function Navbar() {
               <a>Nosotros</a>
             </li>
             <li>
+              <Link to="contacto">
               <a>Contacto</a>
+              </Link>
             </li>
             {user.superAdmin ? (
               <>
@@ -61,6 +63,7 @@ function Navbar() {
               </>
             ) : user.tipo ? (
               <>
+              <p className="nombreDeUsuario">{user.nombre}</p>
                 <li>
                   <a>
                     <FaUserCheck />
@@ -79,6 +82,7 @@ function Navbar() {
               </>
             ) : user.id ? (
               <>
+              <p className="nombreDeUsuario">{user.nombre}</p>
                 <li>
                   <a>
                     <FaUserCheck />
@@ -97,6 +101,7 @@ function Navbar() {
               </>
             ) : (
               <>
+              <p className="nombreDeUsuario">{user.nombre}</p>
                 <li>
                   <a>
                     <FaUserCircle />

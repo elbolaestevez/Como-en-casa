@@ -17,9 +17,10 @@ import Pago from "./PagoTarjeta";
 import PagoEfectivo from "./PagoEfectivo";
 import VistaAdminUsuarios from "./VistaAdminUsuarios";
 import { useSelector } from "react-redux";
+import Contacto from "./Contacto";
 
 function App() {
-  const [products, setProducts] = useState([]);
+  const [products, setProducts]=useState([])
   const user = useSelector((state) => state.user);
 
   //Pedido para obtener todos los productos
@@ -50,10 +51,11 @@ function App() {
         <Route path="login" element={<Login />}></Route>
         <Route path="historial" element={<VistaHistorial />}></Route>
         <Route path="registro" element={<Registro />}></Route>
+        <Route path="contacto" element={<Contacto />}></Route>
         <Route path="carrito" element={<CarritoDeCompras />}></Route>
         <Route path="pagoTarjeta" element={<Pago />}></Route>
         <Route path="pagoEfectivo" element={<PagoEfectivo />}></Route>
-        <Route path="productos" element={<Productos products={products} />}></Route>
+        <Route path="productos" element={<Productos />}></Route>
         <Route path="/productos/:id" element={<ProductoDetallado />}></Route>
         {user.superAdmin ? (
           <Route path="/admin/users" element={<VistaAdminUsuarios />}></Route>
