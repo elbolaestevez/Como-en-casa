@@ -4,14 +4,28 @@ import Card from "../common/Card";
 import { useSelector } from "react-redux";
 import { useState } from "react";
 import axios from "axios";
+import { useEffect } from "react";
 
-function Productos({ products }) {
+function Productos() {
   const [titulo, setTitulo] = useState("");
   const [descripcion, setDescripcion] = useState("");
   const [precio, setPrecio] = useState(0);
   const [tipo, setTipo] = useState("");
   const [modal, setModal] = useState(false);
   const [imagen, setImagen] = useState("");
+  const [products, setProducts]=useState([])
+  const [productoAgregado, setProductoAgregado] = useState({})
+
+  //Pedido para obtener todos los productos
+
+  useEffect(() => {
+    axios
+      .get("/api/cartas")
+      .then((res) => res.data)
+      .then((cartas) => setProducts(cartas))
+      .catch((error) => console.error(error));
+  }, [productoAgregado]);
+
 
   const handleImagen = (evento) => {
     setImagen(evento.target.value);
@@ -25,6 +39,7 @@ function Productos({ products }) {
     setTipo(tipo);
   };
 
+
   const handleSubmit = (evento) => {
     evento.preventDefault();
     axios
@@ -35,6 +50,7 @@ function Productos({ products }) {
         tipo: tipo,
         imagen,
       })
+      .then(producto=>setProductoAgregado(producto))
       .then(() => alert("Agregado con exito!"))
       .catch(() => alert("No pudiste crearlo"));
   };
