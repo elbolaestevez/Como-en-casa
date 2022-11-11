@@ -1,20 +1,30 @@
 const Cartas = require("./Cartas");
 const Users = require("./Users");
 const Pedido = require("./Pedido");
-const Admins = require("./Admins");
+const Comentarios = require("./Comentarios");
 const Pago = require("./Pago");
+const Carrito = require("./Carrito");
 
-// La relacion
+//relacion carrito con usuario y cartas
+Carrito.belongsToMany(Cartas, { through: "comida" });
+Cartas.belongsToMany(Carrito, { through: "comida" });
 
-Users.hasMany(Pedido, { as: "orden" });
-Pedido.belongsTo(Users, { as: "orden" });
+Carrito.belongsTo(Users, { as: "author" });
 
-Pedido.belongsToMany(Cartas, { through: "comida" });
-Cartas.belongsToMany(Pedido, { through: "comida" });
+//relacion comentarios con Carta y usuario
+Comentarios.belongsTo(Cartas, { as: "review" });
 
+Comentarios.belongsToMany(Users, { through: "resenia" });
+Users.belongsToMany(Comentarios, { through: "resenia" });
+
+//relacion Pedido con usuario y Carta
+Pedido.belongsToMany(Cartas, { through: "orden" });
+Cartas.belongsToMany(Pedido, { through: "orden" });
+
+Pedido.belongsTo(Users, { as: "ordenfinalizada" });
+
+//relacion usuario con pago
 Users.hasMany(Pago);
 Pago.belongsTo(Users);
 
-// Admins.belongsTo(Users,{as:"adminUser"})
-
-module.exports = { Cartas, Users, Pedido, Admins, Pago };
+module.exports = { Cartas, Users, Pedido, Pago, Carrito, Comentarios };

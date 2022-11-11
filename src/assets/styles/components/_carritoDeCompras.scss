@@ -1,0 +1,55 @@
+.carrito_container {
+  width: 80%;
+  height: 100vh;
+  margin: 40px auto;
+  display: flex;
+  flex-direction: column;
+  h2 {
+    margin-bottom: 20px;
+  }
+}
+
+.container_table {
+  text-align: center;
+
+  img {
+    width: 80px;
+    height: 70px;
+  }
+
+  table {
+    border: 1px solid #000;
+    width: 100%;
+  }
+
+  th,
+  td {
+    padding: 15px;
+    border: 1px solid #000;
+  }
+}
+
+.container_formulario {
+  margin: 30px;
+  display: flex;
+  justify-content: end;
+  form {
+    width: 20%;
+    border: 1px black solid;
+    padding: 10px;
+    h3 {
+      font-size: 20px;
+      margin: 0px;
+    }
+    button {
+      cursor: pointer;
+      margin: 5px;
+      padding: 5px;
+      width: 50%;
+    }
+  }
+}
+
+.container_total {
+  margin: 40px;
+}

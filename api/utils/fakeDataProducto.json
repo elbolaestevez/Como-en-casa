@@ -1,51 +1,97 @@
 [
   {
-    "nombre": "milanesa napolitana",
-    "descripcion": "la mejor milanga",
+    "nombre": "Milanesa",
+    "descripcion": "Milanesa con papas fritas",
     "precio": 1200,
-    "imagen": "https://upload.wikimedia.org/wikipedia/commons/4/47/Hamburger_%28black_bg%29.jpg",
+    "imagen": "https://vinomanos.com/wp-content/uploads/2019/09/Milanesa-perfecta.jpg",
     "tipo": "Carnes",
     "puntaje": 5,
     "stock": 100
   },
   {
     "nombre": "Carne al horno",
-    "descripcion": "asdasdasdasdsadadasdasdasdsadsad",
+    "descripcion": "Carne con vegetales al horno",
+    "precio": 1500,
+    "imagen": "https://www.65ymas.com/uploads/s1/23/02/01/bigstock-traditional-roasted-dry-aged-v-323650474.jpeg",
+    "tipo": "Carnes",
+    "puntaje": 5,
+    "stock": 100
+  },
+  {
+    "nombre": "Milanesa napolitana",
+    "descripcion": "Milanesa napolitana con Ensalada",
     "precio": 1200,
-    "imagen": "https://upload.wikimedia.org/wikipedia/commons/4/47/Hamburger_%28black_bg%29.jpg",
+    "imagen": "https://cocinacriolla.com.ar/wp-content/uploads/2021/04/milanesa-napolitana-1.jpg",
+    "tipo": "Carnes",
+    "puntaje": 5,
+    "stock": 100
+  },
+  {
+    "nombre": "Bife de chorizo",
+    "descripcion": "Bife de chorizo con vegetales",
+    "precio": 1600,
+    "imagen": "https://recetas.mx/wp-content/uploads/2019/02/Grilled-Pepper-Steak-1024x802.jpg",
     "tipo": "Carnes",
     "puntaje": 5,
     "stock": 100
   },
   {
     "nombre": "Spaguetti con bolognesa",
-    "descripcion": "asdasdasdasdsadadasdasdasdsadsad",
-    "precio": 1200,
-    "imagen": "https://upload.wikimedia.org/wikipedia/commons/4/47/Hamburger_%28black_bg%29.jpg",
+    "descripcion": "Spaguetti con salsa bolognesa",
+    "precio": 1250,
+    "imagen": "https://www.paulinacocina.net/wp-content/uploads/2015/05/bolo.jpg",
     "tipo": "Pastas",
     "puntaje": 5,
     "stock": 100
   },
   {
-    "nombre": "Spaguetti con crema",
-    "descripcion": "asdasdasdasdsadadasdasdasdsadsad",
-    "precio": 1200,
-    "imagen": "https://upload.wikimedia.org/wikipedia/commons/4/47/Hamburger_%28black_bg%29.jpg",
+    "nombre": "Lasagna",
+    "descripcion": "Lasagna de carne con salsa blanca",
+    "precio": 1500,
+    "imagen": "https://www.recetasdesbieta.com/wp-content/uploads/2018/10/lasagna-original..jpg",
+    "tipo": "Pastas",
+    "puntaje": 5,
+    "stock": 100
+  },
+  {
+    "nombre": "Canelones de verdura",
+    "descripcion": "Canelones de verdura con queso y salsa blanca y tuco",
+    "precio": 1300,
+    "imagen": "https://assets.unileversolutions.com/recipes-v2/209558.jpg",
     "tipo": "Pastas",
     "puntaje": 5,
     "stock": 100
   },
   {
     "nombre": "Ravioles de ricota",
-    "descripcion": "asdasdasdasdsadadasdasdasdsadsad",
+    "descripcion": "Ravioles de ricota con manteca y queso",
     "precio": 1200,
-    "imagen": "https://upload.wikimedia.org/wikipedia/commons/4/47/Hamburger_%28black_bg%29.jpg",
+    "imagen": "http://alicante.com.ar/uploads/recetas/191_receta.jpg",
     "tipo": "Pastas",
     "puntaje": 5,
     "stock": 100
   },
   {
     "nombre": "Trucha",
+    "descripcion": "Trucha con ensalada",
+    "precio": 1200,
+    "imagen": "https://media-cdn.tripadvisor.com/media/photo-s/1c/a0/05/4f/trucha-frita-todos-nuestros.jpg",
+    "tipo": "Pescado",
+    "puntaje": 5,
+    "stock": 100
+  },
+  {
+    "nombre": "Croquetas de merluza",
+    "descripcion": "Croquetas de merluza",
+    "precio": 1100,
+    "imagen": "https://images-gmi-pmc.edge-generalmills.com/acb0b5d5-0d2b-4e2c-813b-6497b83381de.jpg",
+    "tipo": "Pescado",
+    "puntaje": 5,
+    "stock": 100
+  },
+  
+  {
+    "nombre": "Atun con arroz",
     "descripcion": "asdasdasdasdsadadasdasdasdsadsad",
     "precio": 1200,
     "imagen": "https://upload.wikimedia.org/wikipedia/commons/4/47/Hamburger_%28black_bg%29.jpg",
@@ -54,11 +100,96 @@
     "stock": 100
   },
   {
-    "nombre": "Atun con arroz",
-    "descripcion": "asdasdasdasdsadadasdasdasdsadsad",
+    "nombre": "Pollo al horno",
+    "descripcion": "Pollo al horno con papas",
+    "precio": 1500,
+    "imagen": "https://i.blogs.es/1462bc/pollo-asado-arguinano2/840_560.jpg",
+    "tipo": "Pollo",
+    "puntaje": 5,
+    "stock": 100
+  },
+  {
+    "nombre": "Arroz con pollo",
+    "descripcion": "Arroz con pollo",
+    "precio": 1400,
+    "imagen": "https://www.recetasjudias.com/wp-content/uploads/2014/12/Arroz-con-Pollo-1-e1604353559475.jpg",
+    "tipo": "Pollo",
+    "puntaje": 5,
+    "stock": 100
+  },
+  {
+    "nombre": "Ensalada",
+    "descripcion": "Ensalada mixta",
+    "precio": 1400,
+    "imagen": "https://easyrecetas.com/wp-content/uploads/2019/11/Receta-de-Ensalada-Mixta-de-Verduras.jpg",
+    "tipo": "Ensaladas",
+    "puntaje": 5,
+    "stock": 100
+  },
+  {
+    "nombre": "Ensalada de papa y huevo",
+    "descripcion": "Ensalada de papa y huevo",
+    "precio": 1400,
+    "imagen": "https://assets.unileversolutions.com/recipes-v2/230544.jpg",
+    "tipo": "Ensaladas",
+    "puntaje": 5,
+    "stock": 100
+  },
+  {
+    "nombre": "Coca cola",
+    "descripcion": "Coca cola 1.5L",
+    "precio": 600,
+    "imagen": "https://carrefourar.vtexassets.com/arquivos/ids/220177/7790895000997_02.jpg?v=637704294205400000",
+    "tipo": "Bebidas",
+    "puntaje": 5,
+    "stock": 100
+  },
+  {
+    "nombre": "Vino",
+    "descripcion": "Vino tinto",
+    "precio": 800,
+    "imagen": "https://ardiaprod.vtexassets.com/arquivos/ids/223338/Vino-Tinto-Nicasia-Vineyards-Cabernet-Sauvignon-750-Ml-_1.jpg?v=637858288667800000",
+    "tipo": "Bebidas",
+    "puntaje": 5,
+    "stock": 100
+  },{
+    "nombre": "Soda",
+    "descripcion": "Soda",
+    "precio": 400,
+    "imagen": "https://d1on8qs0xdu5jz.cloudfront.net/webapp/images/productos/b/0000004000/4236.jpg",
+    "tipo": "Bebidas",
+    "puntaje": 5,
+    "stock": 100
+  },{
+    "nombre": "Tiramisu",
+    "descripcion": "Tiramisu",
+    "precio": 500,
+    "imagen": "https://recetasdecocina.elmundo.es/wp-content/uploads/2022/08/tiramisu-postre-italiano.jpg",
+    "tipo": "Postres",
+    "puntaje": 5,
+    "stock": 100
+  },{
+    "nombre": "Volcan de chocolate",
+    "descripcion": "Volcan de chocolate",
+    "precio": 500,
+    "imagen": "https://www.recetasnestle.com.ar/sites/default/files/srh_recipes/c880c5651a6e82065962cf3bc20efaef.jpg",
+    "tipo": "Postres",
+    "puntaje": 5,
+    "stock": 100
+  },{
+    "nombre": "Garbanzos con hongos",
+    "descripcion": "Garbanzos con hongos",
     "precio": 1200,
-    "imagen": "https://upload.wikimedia.org/wikipedia/commons/4/47/Hamburger_%28black_bg%29.jpg",
-    "tipo": "Pescado",
+    "imagen": "https://recetasveganas.net/wp-content/uploads/2019/06/bol-combinado-vegano-saludable-judias-tofu-legumbres-receta3.jpg",
+    "tipo": "Veganos",
+    "puntaje": 5,
+    "stock": 100
+  },{
+    "nombre": "Tacos",
+    "descripcion": "Tacos veganos",
+    "precio": 1200,
+    "imagen": "https://cdn2.cocinadelirante.com/sites/default/files/images/2019/12/recetas-veganas-faciles-y-ricas.jpg",
+    "tipo": "Veganos",
     "puntaje": 5,
     "stock": 100
   }

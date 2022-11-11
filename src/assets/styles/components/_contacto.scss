@@ -1,0 +1,28 @@
+.contacto {
+    background: #dbdce0;
+    height: 500px;
+    max-width: 80%;
+    margin: 40px auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .container-contacto{
+    text-align: center;
+      font-family: "Work Sans", sans-serif ;
+      color: #5b1f00;
+  
+  }
+  
+  .container-contacto h2{
+    margin-bottom: 5vh;
+  
+  }
+  .redes{
+    margin-top: 5vh;
+    padding: 0px 20px;
+    font-weight: bold;
+    color: $navbar_letter_main;
+    text-decoration: none;
+    font-size: 50px;
+  }

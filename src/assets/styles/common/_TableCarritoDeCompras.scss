@@ -1,0 +1,21 @@
+.row_table {
+  svg {
+    font-size: 40px;
+    &:hover {
+      color: red;
+    }
+  }
+  button {
+    background: none;
+    border: none;
+    cursor: pointer;
+  }
+  td{
+    font-size: 1.1rem;
+    button{
+      padding: 8px;
+      background-color: black;
+      color: white;
+    }
+  }
+}
