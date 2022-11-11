@@ -41,6 +41,7 @@ function Navbar() {
             </li>
             {user.superAdmin ? (
               <>
+              <p className="nombreDeUsuario">{user.nombre} Super admin</p>
                 <li>
                   <a>
                     <FaUserCheck />
@@ -53,14 +54,14 @@ function Navbar() {
                       <Link to="historial">Historial</Link>
                     </li>
                     <li>
-                      <Link onClick={handlerLogOut}>Log Out</Link>
+                      <Link onClick={handlerLogOut} to="/">Log Out</Link>
                     </li>
                   </ul>
                 </li>
               </>
             ) : user.tipo ? (
               <>
-              <p className="nombreDeUsuario">{user.nombre}</p>
+              <p className="nombreDeUsuario">{user.nombre} admin</p>
                 <li>
                   <a>
                     <FaUserCheck />
@@ -70,7 +71,7 @@ function Navbar() {
                       <Link to="historial">Historial</Link>
                     </li>
                     <li>
-                      <Link onClick={handlerLogOut}>Log Out</Link>
+                      <Link onClick={handlerLogOut} to="/">Log Out</Link>
                     </li>
                   </ul>
                 </li>
@@ -87,7 +88,7 @@ function Navbar() {
                       <Link to="historial">Historial</Link>
                     </li>
                     <li>
-                      <Link onClick={handlerLogOut}>Log Out</Link>
+                      <Link onClick={handlerLogOut} to="/">Log Out</Link>
                     </li>
                   </ul>
                 </li>
