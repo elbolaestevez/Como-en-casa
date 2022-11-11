@@ -2,32 +2,53 @@ import axios from "axios";
 import React from "react";
 import { useState } from "react";
 import { useEffect } from "react";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
+import { userLogin } from "../state/user";
+import { carritoProducto } from "../state/carrito";
 import TableCarritoDeCompras from "../common/TableCarritoDeCompras";
 
 function CarritoDeCompras() {
   const user = useSelector((state) => state.user);
-  const [productosCarrito, setProductosCarrito] = useState([]);
+  const carrito = useSelector((state) => state.carrito);
+  const dispatch = useDispatch();
+  const [productoEliminado, setProductoEliminado] = useState("");
+
+  // Pedio para eliminar un producto por medio de un click
+  const handleDeleteProducto = (id) => {
+    axios.delete(`/api/carrito/delete/${id}`).then((mensaje) => {
+      setProductoEliminado(mensaje);
+      alert("Eliminado con exito del carrito");
+    });
+  };
+
+  //funcion para optener carrito
+  async function obtenerCarrito() {
+    const pedido = await axios.get("/api/users/me");
+    const user = await dispatch(userLogin(pedido.data));
+    await dispatch(carritoProducto(user.payload.email));
+  }
 
   //Pedido para mostrar los productos añadidos al carrito
   useEffect(() => {
-    axios
-      .get(`/api/carrito/${user.email}`)
-      .then((res) => res.data)
-      .then((productos) => {
-        console.log("SE RENDERISA MUCHO");
-        setProductosCarrito(productos)})
-      .catch(() => alert("No se puede visualizar los productos del carrito"));
-  }, [user.email]);
+    obtenerCarrito();
+  }, [productoEliminado]);
 
   //Funcion para mostrar el valor total a pagar
   const totalApagar = () => {
     let total = 0;
-    productosCarrito.forEach((producto) => {
+    carrito.forEach((producto) => {
       total = total + producto.cartas[0].precio;
     });
     return total;
+  };
+
+  //Cheackout de pago
+  const handleEfectivo = () => {
+    axios
+      .post("/api/pedido", { email: user.email, detalle: null })
+      .then(() => alert("Compra con exito, vuelva pronto!!!"))
+      .catch(() => alert("Error en la compra"));
   };
 
   return (
@@ -45,9 +66,13 @@ function CarritoDeCompras() {
               <th>Eliminar</th>
             </thead>
             <tbody>
-            {productosCarrito?.map((producto, index) => (
-              <TableCarritoDeCompras key={index} producto={producto} />
-            ))}
+              {carrito?.map((producto, index) => (
+                <TableCarritoDeCompras
+                  key={index}
+                  producto={producto}
+                  handleDeleteProducto={handleDeleteProducto}
+                />
+              ))}
             </tbody>
           </table>
           <div className="container_total">
@@ -60,7 +85,7 @@ function CarritoDeCompras() {
                 <button>PAGO TARJETA</button>
               </Link>
               <Link to="/pagoEfectivo">
-                <button>EFECTIVO</button>
+                <button onClick={handleEfectivo}>EFECTIVO</button>
               </Link>
             </form>
           </div>

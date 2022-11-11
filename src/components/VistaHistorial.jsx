@@ -1,4 +1,3 @@
-
 import React, { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
 import axios from "axios";
@@ -7,21 +6,32 @@ function VistaHistorial() {
   const user = useSelector((state) => state.user);
 
   const [ordenes, setordenes] = useState([]);
-  console.log("user", user.email);
+  // const [admin, setadmin] = useState(false);
+  // if (user.tipo) {
+  //   console.log("holahola");
+  //   setadmin(true);
+  // }
 
   useEffect(() => {
-    axios
-      .get(`/api/pedido/${user.email}`)
-      .then((res) => setordenes(res.data))
-      .catch((error) => console.error(error));
+    if (!user.tipo) {
+      axios
+        .get(`/api/pedido/${user.email}`)
+        .then((res) => setordenes(res.data))
+        .catch((error) => console.error(error));
+    } else {
+      axios
+        .get(`/api/pedido`)
+        .then((res) => setordenes(res.data))
+        .catch((error) => console.error(error));
+    }
   }, [user.email]);
 
-  useEffect(() => {
-    axios
-      .get(`/api/pedido`)
-      .then((res) => setordenes(res.data))
-      .catch((error) => console.error(error));
-  }, [user.tipo]);
+  // useEffect(() => {
+  //   axios
+  //     .get(`/api/pedido`)
+  //     .then((res) => setordenes(res.data))
+  //     .catch((error) => console.error(error));
+  // }, [admin]);
 
   return (
     <div className="containerTabla">
@@ -50,7 +60,6 @@ function VistaHistorial() {
               </tr>
             );
           })}
-
         </table>
       </div>
     </div>

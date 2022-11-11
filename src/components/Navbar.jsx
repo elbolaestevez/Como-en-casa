@@ -32,13 +32,16 @@ function Navbar() {
               <Link to="productos">Productos</Link>
             </li>
             <li>
-              <a>Nosotros</a>
+              <Link to="/nosotros">Nosotros</Link>
             </li>
             <li>
+              <Link to="contacto">
               <a>Contacto</a>
+              </Link>
             </li>
             {user.superAdmin ? (
               <>
+              <p className="nombreDeUsuario">{user.nombre} Super admin</p>
                 <li>
                   <a>
                     <FaUserCheck />
@@ -48,55 +51,51 @@ function Navbar() {
                       <Link to="/admin/users">Usuarios</Link>
                     </li>
                     <li>
-                      <Link to="historial">
-                      Historial
-                      </Link>
+                      <Link to="historial">Historial</Link>
                     </li>
                     <li>
-                      <Link onClick={handlerLogOut}>Log Out</Link>
+                      <Link onClick={handlerLogOut} to="/">Log Out</Link>
                     </li>
                   </ul>
                 </li>
-
               </>
             ) : user.tipo ? (
               <>
+              <p className="nombreDeUsuario">{user.nombre} admin</p>
                 <li>
                   <a>
                     <FaUserCheck />
                   </a>
                   <ul>
                     <li>
-                    <Link to="historial">
-                      Historial
-                      </Link>
+                      <Link to="historial">Historial</Link>
                     </li>
                     <li>
-                      <Link onClick={handlerLogOut}>Log Out</Link>
+                      <Link onClick={handlerLogOut} to="/">Log Out</Link>
                     </li>
                   </ul>
                 </li>
               </>
             ) : user.id ? (
               <>
+              <p className="nombreDeUsuario">{user.nombre}</p>
                 <li>
                   <a>
                     <FaUserCheck />
                   </a>
                   <ul>
                     <li>
-                    <Link to="historial">
-                      Historial
-                      </Link>
+                      <Link to="historial">Historial</Link>
                     </li>
                     <li>
-                      <Link onClick={handlerLogOut}>Log Out</Link>
+                      <Link onClick={handlerLogOut} to="/">Log Out</Link>
                     </li>
                   </ul>
                 </li>
               </>
             ) : (
               <>
+              <p className="nombreDeUsuario">{user.nombre}</p>
                 <li>
                   <a>
                     <FaUserCircle />

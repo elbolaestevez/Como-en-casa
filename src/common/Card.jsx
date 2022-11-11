@@ -78,19 +78,15 @@ function Card({ productos }) {
                   <h4>{producto.nombre}</h4>
                   <p>{producto.descripcion}</p>
                   <h3>{`$ ${producto.precio}`}</h3>
-                </div>
-                <button
-                  className="buttonEdit"
-                  onClick={() => handleModal(producto.id)}
-                >
+                  <div>
+                <button className="buttonEdit" onClick={() => handleModal(producto.id)}>
                   <AiOutlineEdit />
                 </button>
-                <button
-                  className="buttonRemove"
-                  onClick={() => handleDelete(producto.id)}
-                >
+                <button className="buttonRemove" onClick={() => handleDelete(producto.id)}>
                   <IoIosRemoveCircleOutline />
                 </button>
+                </div>
+                </div>
               </div>
             ))}
           </div>
@@ -117,27 +113,23 @@ function Card({ productos }) {
       {modal && (
         <div className="modal">
           <div className="overlay">
-            <div className="modal-content">
+            <div className="modal-content-card">
               <div className="descripcion-producto">
                 <form className="card-edicion">
                   <h4>Editar producto:</h4>
-                  <div>
-                    <input
-                      onChange={handleTitulo}
-                      placeholder="Titulo del producto:"
-                    />
-                    <input onChange={handleImagen} placeholder="URL Imagen:" />
-                    <input
-                      onChange={handleDescripcion}
-                      placeholder="Descripcion:"
-                    />
-
-                    <input placeholder="Precio:" onChange={handlePrecio} />
-                  </div>
+                  <input
+                    onChange={handleTitulo}
+                    placeholder="Titulo del producto:"
+                  />
+                  <input onChange={handleImagen} placeholder="URL Imagen:" />
+                  <input
+                    onChange={handleDescripcion}
+                    placeholder="Descripcion:"
+                  />
+                  <input placeholder="Precio:" onChange={handlePrecio} />
+                  <button onClick={handleSubmit}>Editar</button>
                 </form>
-                <button onClick={handleSubmit}>Editar</button>
               </div>
-
               <button className="close-modal" onClick={handleModal}>
                 CERRAR
               </button>
