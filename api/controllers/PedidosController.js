@@ -1,4 +1,4 @@
-const { Carrito, Users, Cartas } = require("../models");
+const { Carrito, Users, Pedido } = require("../models");
 const enviarEmail = require("../config/nodemailer");
 
 // me crea un producto en el pedido

@@ -57,12 +57,12 @@ const getcarritouser = async (req, res) => {
       where: { email },
     });
 
-    // const usuariocarrito = await Carrito.findAll({
-    //   where: {
-    //     authorId: user.id,
-    //   },
-    //   include: [{ model: Users, as: "author" }, "cartas"],
-    // });
+    const usuariocarrito = await Carrito.findAll({
+      where: {
+        authorId: user.id,
+      },
+      include: [{ model: Users, as: "author" }, "cartas"],
+    });
 
     res.send(usuariocarrito);
   } catch (error) {
