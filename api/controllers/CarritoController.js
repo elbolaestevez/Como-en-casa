@@ -13,13 +13,6 @@ const postcarrito = async (req, res) => {
     const carta = await Cartas.findOne({
       where: { id: idcarta },
     });
-
-    const carrito = await Carrito.create({ detalle: detalle });
-    // establecer las relaciones
-
-    await carrito.setAuthor(usuario);
-
-    await carrito.addCartas(carta);
     const usuariocarrito = await Carrito.findAll({
       where: {
         authorId: usuario.id,
@@ -27,17 +20,20 @@ const postcarrito = async (req, res) => {
       include: [{ model: Users, as: "author" }, "cartas"],
     });
     let resultado = false;
-
     usuariocarrito.forEach((persona) => {
       if (persona.cartas[0].id == idcarta) {
         resultado = true;
-        carrito.cantidad = carrito.cantidad + 1;
-        carrito.save();
+        persona.cantidad = persona.cantidad + 1;
+        persona.save();
       }
     });
-    console.log("resultado", resultado);
-
-    res.send(carrito);
+    if (resultado == false) {
+      const carrito = await Carrito.create({ detalle: detalle });
+      await carrito.setAuthor(usuario);
+      await carrito.addCartas(carta);
+      res.send(carrito);
+    }
+    res.send("listo");
   } catch (error) {
     console.log(error);
   }

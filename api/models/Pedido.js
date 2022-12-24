@@ -18,6 +18,9 @@ Pedido.init(
       type: Sequelize.INTEGER,
       defaultValue: 0,
     },
+    cantidad: {
+      type: Sequelize.INTEGER,
+    },
   },
   { sequelize: db, modelName: "pedido" }
 );
