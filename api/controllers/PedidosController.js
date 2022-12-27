@@ -103,6 +103,29 @@ const getpedidouser = async (req, res) => {
   }
 };
 
+//me trae los pedidos no comentados
+const getpedidousercomentado = async (req, res) => {
+  const email = req.params.email;
+
+  try {
+    const user = await Users.findOne({
+      where: { email },
+    });
+
+    const usuariopedido = await Pedido.findAll({
+      where: {
+        ordenfinalizadaId: user.id,
+        comentado: false,
+      },
+      include: [{ model: Users, as: "ordenfinalizada" }, "cartas"],
+    });
+    console.log("user2", usuariopedido[0]);
+    res.send(usuariopedido);
+  } catch (error) {
+    console.log(error);
+  }
+};
+
 //eliminar pedido
 const deletepedido = async (req, res) => {
   const id = req.params.id;
@@ -115,5 +138,6 @@ module.exports = {
   crearpedido,
   getAllpedidos,
   getpedidouser,
+  getpedidousercomentado,
   deletepedido,
 };
