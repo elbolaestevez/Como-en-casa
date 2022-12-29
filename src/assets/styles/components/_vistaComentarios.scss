@@ -1,0 +1,40 @@
+.containerTabla {
+  display: flex;
+  flex-direction: column;
+}
+.containercomentarios {
+  display: flex;
+  height: 30%;
+  width: 100%;
+  align-items: center;
+  padding-left: 5%;
+}
+.divpedido {
+  height: 10%;
+  display: flex;
+
+  margin-right: 0.5%;
+}
+.imagen {
+  height: 10rem;
+  border-radius: 6%; // cambie la unidad de porcentaje a rem para que quede bien sino no esta centrado
+}
+.divcomentarios {
+  margin-left: 2%;
+  display: flex;
+  align-items: center;
+  height: 10%;
+  flex-direction: column;
+}
+.divcomentarios p {
+  font-size: larger;
+}
+.divfecha {
+  margin-left: 2%;
+  display: flex;
+  align-items: center;
+  height: 10%;
+}
+.divfecha p {
+  font-size: larger;
+}

@@ -22,8 +22,9 @@ const crearpedido = async (req, res) => {
     });
     console.log("usuariocarrito", usuariocarrito);
     for (let i = 0; i < usuariocarrito.length; i++) {
-      console.log("user33", usuariocarrito[0].dataValues.cantidad);
-      if (pedidos[1]) {
+      if (pedidos[0]) {
+        /*pedidos[1]*/
+        console.log("hola pedido", pedidos);
         let pedido = await Pedido.create({
           detalle: detalle,
           idpedido: pedidos[pedidos.length - 1].idpedido + 1,
@@ -35,6 +36,7 @@ const crearpedido = async (req, res) => {
 
         //
       } else {
+        console.log("hola no pedido");
         let pedido = await Pedido.create({
           detalle: detalle,
           idpedido: 1,
