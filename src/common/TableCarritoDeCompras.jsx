@@ -49,7 +49,7 @@ function TableCarritoDeCompras({ producto, handleDeleteProducto, setL }) {
       </td>
       <td>{nombre}</td>
       <td>{descripcion}</td>
-      <td>{precio * cant}</td>
+      <td>{precio}</td>
       <td>
         <button onClick={handleResta}>-</button>
         {cant}

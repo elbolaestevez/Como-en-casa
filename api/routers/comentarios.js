@@ -13,9 +13,11 @@ router.post("/", async (req, res) => {
     });
     // edito el puntaje del producto
     carta.contador++;
-    console.log("carta", carta);    
+    console.log("carta", carta);
     console.log("roto", req.body.puntaje);
-    carta.puntaje = ((Number(carta.puntaje) + Number(req.body.puntaje)) / Number(carta.contador));
+    carta.puntaje =
+      (Number(carta.puntaje) + Number(req.body.puntaje)) /
+      Number(carta.contador);
     carta.save();
 
     //encuentro el usuario
@@ -31,9 +33,11 @@ router.post("/", async (req, res) => {
     await comentariofinal.addUsers(user);
     //Paso a true el producto comentado
 
-    const pedido = await Pedido.findByPk(idpedido);
-    pedido.update({ comentado: true });
-
+    const pedido = await Pedido.findAll({ idpedido: idpedido });
+    pedido.map((comentado) => {
+      (comentado.comentado = true), comentado.save();
+    });
+    console.log("pedd", pedido[0].dataValues.comentado);
     res.send(comentariofinal);
   } catch (error) {
     console.log(error);

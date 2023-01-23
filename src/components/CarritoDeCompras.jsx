@@ -14,6 +14,7 @@ function CarritoDeCompras() {
   const dispatch = useDispatch();
   const [productoEliminado, setProductoEliminado] = useState("");
   const [cambio, setCambio] = useState(0);
+  const [bool, setbool] = useState(false);
 
   const setL = (language) => {
     setCambio(language);
@@ -55,6 +56,7 @@ function CarritoDeCompras() {
     axios
       .post("/api/pedido", { email: user.email, detalle: null })
       .then(() => alert("Compra con exito, vuelva pronto!!!"))
+      // .then(() => setbool(!bool))
       .catch(() => alert("Error en la compra"));
   };
 

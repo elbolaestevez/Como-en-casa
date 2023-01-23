@@ -44,7 +44,7 @@ function ProductoDetallado() {
         <div className="descripcion-productoDetallado">
           <h4>{producto.nombre}</h4>
           <p>{producto.descripcion}</p>
-          <p>{producto.stock}</p>
+          <p>Stock:{producto.stock}</p>
           <h3>{`Puntaje: ${producto.puntaje} / 5`}</h3>
           <div className="btn-productoDetallado">
             <button onClick={handleAdd}>Agregar al Carrito</button>
