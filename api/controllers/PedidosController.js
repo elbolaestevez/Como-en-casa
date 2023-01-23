@@ -1,4 +1,4 @@
-const { Carrito, Users, Pedido } = require("../models");
+const { Carrito, Users, Pedido, Cartas } = require("../models");
 const enviarEmail = require("../config/nodemailer");
 
 // me crea un producto en el pedido
@@ -16,12 +16,25 @@ const crearpedido = async (req, res) => {
       },
       include: [{ model: Users, as: "author" }, "cartas"],
     });
-    
+
     const pedidos = await Pedido.findAll({
       include: [{ model: Users, as: "ordenfinalizada" }, "cartas"],
     });
-    console.log("usuariocarrito", usuariocarrito);
+
     for (let i = 0; i < usuariocarrito.length; i++) {
+      // console.log("user", usuariocarrito);
+
+      //cambie el stock del producto
+      let stock =
+        usuariocarrito[i].dataValues.cartas[0].dataValues.stock -
+        usuariocarrito[i].dataValues.cantidad;
+
+      let carta = await Cartas.findByPk(
+        usuariocarrito[i].dataValues.cartas[0].dataValues.id
+      );
+      carta.update({ stock });
+      //
+
       if (pedidos[0]) {
         /*pedidos[1]*/
         console.log("hola pedido", pedidos);

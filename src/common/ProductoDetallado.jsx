@@ -5,7 +5,7 @@ import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 
 function ProductoDetallado() {
-  const navigate = useNavigate()
+  const navigate = useNavigate();
   const { id } = useParams();
   const user = useSelector((state) => state.user);
 
@@ -20,23 +20,22 @@ function ProductoDetallado() {
   }, [id]);
   //Evento click para agregar pedido al carrito
   const handleAdd = () => {
-    axios.post("/api/carrito",{email: user.email, idcarta: id, detalle: null})
-    .then((res)=> res.data)
-    .then(()=> alert("Añadido al carrito con exito"))
-    .catch(()=> {
-      alert("Inicia sesion para agregar al carrito")
-      navigate("/login")
-    })
+    axios
+      .post("/api/carrito", { email: user.email, idcarta: id, detalle: null })
+      .then((res) => res.data)
+      .then(() => alert("Añadido al carrito con exito"))
+      .catch(() => {
+        alert("Inicia sesion para agregar al carrito");
+        navigate("/login");
+      });
   };
 
   return (
     <div className="productoDetallado">
       <div className="card-productoDetallado">
-          <Link to="/productos">
-            <button className="volver">
-              Volver atras
-            </button>
-          </Link>
+        <Link to="/productos">
+          <button className="volver">Volver atras</button>
+        </Link>
         <div className="img-productoDetallado">
           <div className="container-img">
             <img src={producto.imagen} alt="" />
@@ -45,6 +44,7 @@ function ProductoDetallado() {
         <div className="descripcion-productoDetallado">
           <h4>{producto.nombre}</h4>
           <p>{producto.descripcion}</p>
+          <p>{producto.stock}</p>
           <h3>{`Puntaje: ${producto.puntaje} / 5`}</h3>
           <div className="btn-productoDetallado">
             <button onClick={handleAdd}>Agregar al Carrito</button>
